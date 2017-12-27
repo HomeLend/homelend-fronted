@@ -1,0 +1,35 @@
+.progressLine {
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #777;
+}
+div.lineContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0;
+}
+.lineContainer .line {
+    width: calc(50% - 12px);
+    height: 3px;
+    background: #ffffff;
+}
+.lineContainer .line.finished {
+    background: #4BCBD9;
+}
+.lineContainer .ball {
+    width: 24px;
+    height: 24px;
+    background: #4BCBD9;
+    display: inline-flex;
+    border-radius: 50%;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 4px 0 gray;
+}
+.lineContainer:first-child .line:first-child,
+.lineContainer:last-child .line:last-child {
+    opacity: 0;
+}

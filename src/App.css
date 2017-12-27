@@ -1,0 +1,12 @@
+#root a {
+    color: black;
+    overflow: hidden;
+}
+body {
+    background: url('/media/images/background.svg');
+    background-size: cover;
+}
+h3 {
+    width: 100%;
+    text-align: center;
+}

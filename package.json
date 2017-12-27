@@ -1,0 +1,35 @@
+{
+  "name": "homelend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.0.1",
+    "@fortawesome/fontawesome-free-solid": "^5.0.1",
+    "@fortawesome/react-fontawesome": "^0.0.16",
+    "bootstrap": "4.0.0-beta.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.20.0",
+    "rc-slider": "^8.5.0",
+    "react": "^16.2.0",
+    "react-datetime": "^2.11.1",
+    "react-dom": "^16.2.0",
+    "react-fontawesome": "^1.6.1",
+    "react-masonry-component": "^6.0.2",
+    "react-number-format": "^3.1.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-select": "^1.1.0",
+    "reactstrap": "next",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^5.0.0",
+    "validator": "^9.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

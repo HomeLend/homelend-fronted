@@ -1,0 +1,189 @@
+@import '../../../node_modules/react-datetime/css/react-datetime.css';
+@import '../../../node_modules/react-select/dist/react-select.min.css';
+@import '../../../node_modules/rc-slider/assets/index.css';
+input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    box-shadow: none;
+    margin-top: 3px;
+    height: 40px;
+    padding: 6px;
+}
+label {
+    font-weight: 600;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.radio.btn {
+    border-radius: 3px;
+    width: 100%;
+    font-weight: 700;
+    border: 1px solid #ccc;
+    background: white;
+    color: gray;
+    transition: all .2s ease-in-out;
+    padding: .5rem 1rem;
+    display: inline-block;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.radio.btn.selected {
+    background-color: #4BCBD9 !important;
+    color: white;
+}
+.radio.btn:hover {
+    background: #e6e6e6;
+}
+input[type='radio']:focus + label.btn {
+    outline: 0;
+    box-shadow: 0 0 0 4px rgba(93, 143, 194, 0.25);
+}
+.Select div {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+}
+.Select-input {
+    width: 100%;
+}
+.Select-input input{
+    padding: 0;
+    height: auto;
+}
+.Select-control {
+    border: none;
+    border-radius: 0;
+    background: #eee;
+    height: 30px;
+    transition: all .2s ease-in-out;
+}
+.Select-control:hover {
+    background: #e6e6e6;
+}
+.card {
+    padding: 20px;
+    width: 50%;
+}
+.btn {
+    cursor: pointer;
+}
+.rc-slider-step {
+    height: 10px;
+}
+.react-numberInput {
+    text-align: center;
+}
+.md-checkbox {
+    position: relative;
+    margin: 16px 15px;
+}
+.md-checkbox input {
+    display: none;
+}
+.md-checkbox label {
+    cursor: pointer;
+}
+.md-checkbox label:before,
+.md-checkbox label:after {
+    content: "";
+    position: absolute;
+    left:0;
+    top: 0;
+}
+.md-checkbox label:before {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.54);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background .3s;
+}
+.md-checkbox label {
+    outline: 0;
+    margin-left: 10px;
+}
+.md-checkbox.checked label:before {
+    background: #4BCBD9;
+    border:none;
+}
+.md-checkbox.checked label:after {
+    transform: rotate(-45deg);
+    top: 4.4px;
+    left: 4px;
+    width: 12px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-top-style: none;
+    border-right-style: none;
+}
+.fileUploadSquare {
+    background: #4BCBD9;
+    background-image: url('/media/images/smartForms/uploadForeground.svg');
+    background-size: 71px 94px;
+    background-position: -1px -1px;
+    height: 92px;
+    width: 70px;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.2s all ease;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.fileUploadSquare:hover {
+    background-color: #D8D8D8;
+}
+.fileUploadSquare .fa {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #363B4E;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    box-shadow: 0 0 7px rgba(0,0,0,0.25), 0 0 8px rgba(0,0,0,0.22);
+    transition: 0.2s transform ease;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight:200;
+    margin: 0;
+}
+.fileUploadSquare:hover .fa:not(.animateUp) {
+    transform: rotate(90deg);
+}
+
+@keyframes slideUp_animation {
+    0% { transform: translateY(100%) scale(1); opacity: 1; }
+    100% { transform: translateY(-100%) scale(1.3); opacity: 0; }
+}
+.animateUp {
+    overflow: hidden;
+}
+.animateUp {
+    animation-name: slideUp_animation;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+input[type="file"] {
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    div.card {
+        width: 100%;
+    }
+}
