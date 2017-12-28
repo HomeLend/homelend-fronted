@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from '../../Smartforms/index';
 import { Container, Row, Col } from 'reactstrap';
 import { sGet } from '../../../data/constants'
-import { isEmpty, map } from 'lodash'
+import { isEmpty, map, uniqueId } from 'lodash'
 // import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
@@ -20,7 +20,7 @@ const register = {
 const buyerRequestMortgage = {
   fields: [
     {name: 'salary', default: '5000', type: 'number', label: `Monthly salary`},
-    {name: 'mortgageAmount', type: 'number', label: `Mortgage amount wanted`, size: 6},
+    {name: 'mortgageAmount', default: 1000000, type: 'number', label: `Mortgage amount wanted`, size: 6},
     {name: 'repaymentYears', default: 25, type: 'number', label: `Repayment years`, size: 6},
   ]
 }
@@ -47,10 +47,11 @@ export default class Seller extends Component {
 
     this.requestMortgage = () => {
       const data = getFormData('requestMortgage');
+      const newRequest = {[uniqueId()]: {STATUS:'pendingForCreditScore', data, user: getFormData('buyerRegister')}};
       // POST(`http://localhost:3000/api/v1/buyer/register`, {propertyId}, console.log)
       this.setState({currentScreen: 'waiting4Offers'})
-      addTrack({type: "Mortgage request", data })
-      requestMortgage({data, STATUS:'pendingForCreditScore'})
+      addTrack({type: "Mortgage request", newRequest })
+      requestMortgage(newRequest)
     }
 
   }
