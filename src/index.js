@@ -12,6 +12,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 function mapStateToProps(state) {
   return {
     forms: state.forms,
+    data: state.data,
+    tracker: state.tracker,
+    properties: state.properties,
+    mortgage: state.mortgage,
   };
 }
 

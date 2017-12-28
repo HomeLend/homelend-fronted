@@ -10,3 +10,16 @@ h3 {
     width: 100%;
     text-align: center;
 }
+.btn.btn-primary {
+    background: #4BCBD9;
+    border: none;
+    transition: .05s all ease;
+}
+.btn.btn-primary:hover {
+    background: #46bcc9;
+    box-shadow: rgba(0,0,0,0.2) 1px 1px 3px 1px;
+}
+.btn.btn-primary:active {
+    background: #4bcbd8 !important;
+    transform: scale(0.9);
+}

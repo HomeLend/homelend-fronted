@@ -1,11 +1,11 @@
 import { store } from '../data/constants';
 import { concat } from 'lodash';
 
-const ADD_TRACK = "ADD_TRACK";
+const REQUEST_MORTGAGE = "REQUEST_MORTGAGE";
 
-export const addTrack = data => {
+export const requestMortgage = data => {
   const action = {
-    type: ADD_TRACK,
+    type: REQUEST_MORTGAGE,
     data,
   }
   return store.dispatch(action);
@@ -21,8 +21,8 @@ const initialState = [];
 
 export default function runtime(state = initialState, action) {
   switch (action.type) {
-    case ADD_TRACK:
-      return concat(action.data, state);
+    case REQUEST_MORTGAGE:
+      return concat(state, action.data);
     default:
       return state;
   }
