@@ -33,7 +33,7 @@ export default class CreditRankAgency extends Component {
         this.setState({calculating: {...this.state.calculating, [mortgageId]: false}})
         setCreditRank({ creditScore: 5, mortgageId});
         addTrack({ type: "Credit score set", data: {mortgageId, creditScore: 5} })
-      }, 5000)
+      }, 2000)
     }
 
   }
@@ -43,9 +43,9 @@ export default class CreditRankAgency extends Component {
 
     console.log("pendingForCreditScore", pendingForCreditScore);
     pendingForCreditScore = reduce(pendingForCreditScore, (result, row, key) => {
-      if(row.STATUS === 'pendingForCreditScore') result.push(row)
+      if(row.STATUS === 'pendingForCreditScore') result[key] = row
       return result
-    }, [])
+    }, {})
 
     console.log("after: ", pendingForCreditScore);
 

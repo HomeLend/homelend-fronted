@@ -1,5 +1,5 @@
 import { store } from '../data/constants';
-import { concat, remove } from 'lodash';
+import { concat } from 'lodash';
 
 const REQUEST_MORTGAGE = "REQUEST_MORTGAGE";
 const SET_CREDIT_RANK = "SET_CREDIT_RANK";
@@ -35,6 +35,7 @@ export const addOffer = (mortgageObject, amount, bankId) => {
 
 
 
+////// TODO fix the transfer to the Financial Institution after credit score, the issue is here in the reducer
 
 
 const initialState = {};
@@ -52,9 +53,9 @@ export default function runtime(state = initialState, action) {
         creditScore: action.data.creditScore,
         STATUS: 'waitingForProposal'
       }
-      console.log(newState, action);
-      return {...newState, [action.data.guid]: action.data};
+      return newState;
     case ADD_OFFER:
+      console.log("ADD OFFER", action)
       return state;
     default:
       return state;
