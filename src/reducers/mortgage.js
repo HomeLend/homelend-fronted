@@ -5,6 +5,7 @@ const REQUEST_MORTGAGE = "REQUEST_MORTGAGE";
 const SET_CREDIT_RANK = "SET_CREDIT_RANK";
 const ADD_OFFER = "ADD_OFFER";
 const ACCEPT_OFFER = "ACCEPT_OFFER";
+const APPROVE_CONDITION = "APPROVE_CONDITION";
 
 export const requestMortgage = data => {
   const action = {
@@ -35,10 +36,21 @@ export const addOffer = (mortgageId, amount, bankId) => {
 }
 
 
+
 export const acceptOffer = (mortgageId, bankId) => {
   const action = {
     type: ACCEPT_OFFER,
     data: {mortgageId, bankId},
+  }
+  return store.dispatch(action);
+}
+
+
+
+export const setApproveCondition = (mortgageId, approveString) => {
+  const action = {
+    type: APPROVE_CONDITION,
+    data: {mortgageId, approveString},
   }
   return store.dispatch(action);
 }
@@ -68,6 +80,9 @@ export default function runtime(state = initialState, action) {
     case ACCEPT_OFFER:
       set(newState, [action.data.mortgageId, 'acceptedOffer'], {bankId: action.data.bankId});
       newState[action.data.mortgageId]['STATUS'] = 'waitingForApprovals';
+      return newState;
+    case APPROVE_CONDITION:
+      set(newState, [action.data.mortgageId, 'conditions', action.data.approveString], true);
       return newState;
     default:
       return state;

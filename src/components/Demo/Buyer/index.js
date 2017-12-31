@@ -7,6 +7,7 @@ import { isEmpty, map, uniqueId } from 'lodash'
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
 import { requestMortgage, acceptOffer } from '../../../reducers/mortgage';
+import MortgageSmartContract from './MortgageSmartContract';
 
 
 const register = {
@@ -48,7 +49,7 @@ export default class Seller extends Component {
     this.requestMortgage = () => {
       const data = getFormData('requestMortgage');
       const newId = uniqueId();
-      const newRequest = {[newId]: {STATUS:'pendingForCreditScore', data, user: getFormData('buyerRegister')}};
+      const newRequest = {[newId]: {STATUS:'pendingForCreditScore', data, user: getFormData('buyerRegister'), propertyId: this.state.propertyChosen}};
       // POST(`http://localhost:3000/api/v1/buyer/register`, {propertyId}, console.log)
       this.setState({currentScreen: 'waiting4Offers', requestId: newId})
       addTrack({type: "Mortgage request", newRequest })
@@ -127,19 +128,7 @@ export default class Seller extends Component {
               }
             </div>
         }
-        {
-          currentScreen === "mortgageSmartContract" &&
-          <div>
-            <h5>Your mortgage request is pending for approval</h5>
-            <div className="d-flex flex-column text-justify mt-5">
-              <div>Seller is the rightful owner of the property</div>
-              <div>The property is not bound to any debt</div>
-              <div>The property is worth at least XXX amount (Appraiser)</div>
-              <div>The structure is according to official specifications</div>
-            </div>
-          </div>
-        }
-
+        { currentScreen === "mortgageSmartContract" && <MortgageSmartContract requestId={requestId} /> }
       </div>
     )
   }
