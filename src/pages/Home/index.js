@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Seller from '../../components/Demo/Seller';
 import Buyer from '../../components/Demo/Buyer/';
 import Fi from '../../components/Demo/Fi';
+import Government from '../../components/Demo/Government';
 import CreditRankAgency from '../../components/Demo/CreditRankAgency';
 import Tracker from '../../components/Demo/Tracker';
 // import LoadingIndicator from '../../components/common/LoadingIndicator';
@@ -38,7 +39,7 @@ export default class Home extends Component {
             <Card title={"BlockChain tracker"} component={<Tracker />} />
           </div>
           <div style={{width: '33.333%'}}>
-            <Card title={"Government"} style={{height: 'calc(50% - 30px)'}} />
+            <Card title={"Government"} style={{height: 'calc(50% - 30px)'}} component={<Government />} />
             <Card title={"Appraiser"} style={{height: 'calc(50% - 30px)', marginTop: '30px'}} />
           </div>
         </div>

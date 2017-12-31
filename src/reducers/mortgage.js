@@ -1,9 +1,10 @@
 import { store } from '../data/constants';
-import { concat } from 'lodash';
+import { set } from 'lodash';
 
 const REQUEST_MORTGAGE = "REQUEST_MORTGAGE";
 const SET_CREDIT_RANK = "SET_CREDIT_RANK";
 const ADD_OFFER = "ADD_OFFER";
+const ACCEPT_OFFER = "ACCEPT_OFFER";
 
 export const requestMortgage = data => {
   const action = {
@@ -25,17 +26,24 @@ export const setCreditRank = data => {
 
 
 
-export const addOffer = (mortgageObject, amount, bankId) => {
+export const addOffer = (mortgageId, amount, bankId) => {
   const action = {
     type: ADD_OFFER,
-    data: {},
+    data: {mortgageId, amount, bankId},
   }
   return store.dispatch(action);
 }
 
 
+export const acceptOffer = (mortgageId, bankId) => {
+  const action = {
+    type: ACCEPT_OFFER,
+    data: {mortgageId, bankId},
+  }
+  return store.dispatch(action);
+}
 
-////// TODO fix the transfer to the Financial Institution after credit score, the issue is here in the reducer
+
 
 
 const initialState = {};
@@ -55,8 +63,12 @@ export default function runtime(state = initialState, action) {
       }
       return newState;
     case ADD_OFFER:
-      console.log("ADD OFFER", action)
-      return state;
+      set(newState, [action.data.mortgageId, 'offers', `${action.data.bankId}`], {amount: action.data.amount});
+      return newState;
+    case ACCEPT_OFFER:
+      set(newState, [action.data.mortgageId, 'acceptedOffer'], {bankId: action.data.bankId});
+      newState[action.data.mortgageId]['STATUS'] = 'waitingForApprovals';
+      return newState;
     default:
       return state;
   }

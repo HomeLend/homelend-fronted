@@ -41,13 +41,10 @@ export default class CreditRankAgency extends Component {
     const { calculating } = this.state;
     let pendingForCreditScore = {...sGet('mortgage')};
 
-    console.log("pendingForCreditScore", pendingForCreditScore);
     pendingForCreditScore = reduce(pendingForCreditScore, (result, row, key) => {
       if(row.STATUS === 'pendingForCreditScore') result[key] = row
       return result
     }, {})
-
-    console.log("after: ", pendingForCreditScore);
 
     if( isEmpty(pendingForCreditScore)) return null;
 

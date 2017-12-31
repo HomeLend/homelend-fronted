@@ -3,12 +3,12 @@ import { Container, Row, Col } from 'reactstrap';
 // import Form from '../../components/Smartforms';
 // import POST from '../../ajax/post';
 // import { getFormData } from '../../components/Smartforms/functions';
-// import { addTrack } from '../../reducers/tracker';
 // import { addProperty } from '../../reducers/properties';
 // import LoadingIndicator from '../../components/common/LoadingIndicator';
+import { addTrack } from '../../reducers/tracker';
 import { sGet } from '../../data/constants';
 import { addOffer } from '../../reducers/mortgage';
-import { isEmpty, map, filter } from 'lodash';
+import { isEmpty, map, reduce } from 'lodash';
 
 
 export default class Fi extends Component {
@@ -17,15 +17,19 @@ export default class Fi extends Component {
 
     const bankId = 1;
 
-    this.sendMortgageProposal = (mortgage, amount) => () => {
-      addOffer(mortgage, amount, bankId);
+    this.sendMortgageProposal = (mortgageId, amount) => () => {
+      addTrack({type: "Offer served", data:{mortgageId, bankId} })
+      addOffer(mortgageId, amount, bankId);
     }
 
   }
   render() {
-    let mortgages = sGet('mortgage');
+    let mortgages = {...sGet('mortgage')};
 
-    mortgages = filter(mortgages, {STATUS: 'waitingForProposal'})
+    mortgages = reduce(mortgages, (result, row, key) => {
+      if(row.STATUS === 'waitingForProposal') result[key] = row
+      return result
+    }, {})
 
     if( isEmpty(mortgages)) return null;
 
@@ -49,7 +53,7 @@ export default class Fi extends Component {
                 <Col xs="3">{v.user.idnumber}</Col>
                 <Col xs="3">{v.data.mortgageAmount} / {v.data.repaymentYears}</Col>
                 <Col xs="3">{v.creditScore} / {monthlyPayment}</Col>
-                <Col xs="3"><div className="btn btn-primary" onClick={this.sendMortgageProposal(v , monthlyPayment)}>Send Proposal</div></Col>
+                <Col xs="3"><div className="btn btn-primary" onClick={this.sendMortgageProposal(k, monthlyPayment)}>Send Proposal</div></Col>
               </Row>
             )
           }
