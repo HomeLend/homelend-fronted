@@ -43,6 +43,10 @@ export default class Government extends Component {
             const approve1 = get(v, ['conditions', 'approve1']) || false;
             const approve2 = get(v, ['conditions', 'approve2']) || false;
 
+            const propertyValue = get(v, ['appraiser', 'value']) || false;
+
+            if(!propertyValue) return null;
+
             if(approve1 && approve2) return <div key={mortgageId}><strong>Request {mortgageId} is approved!</strong></div>;
             return (
               <div key={mortgageId} style={{textAlign: 'justify'}}>

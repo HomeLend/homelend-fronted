@@ -7,7 +7,7 @@ import { isEmpty, map, uniqueId } from 'lodash'
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
 import { requestMortgage, acceptOffer } from '../../../reducers/mortgage';
-import MortgageSmartContract from './MortgageSmartContract';
+import AppraiserStep from './AppraiserStep';
 
 
 const register = {
@@ -57,7 +57,7 @@ export default class Seller extends Component {
     }
 
     this.acceptOffer = (requestId, bankId) => () => {
-      this.setState({currentScreen: 'mortgageSmartContract'})
+      this.setState({currentScreen: 'chooseAppraiser'})
       addTrack({type: "Mortgage smart contract created", data:{bankId} })
       acceptOffer(requestId, bankId)
       console.log("Accepted offer from bank id " + bankId);
@@ -128,7 +128,7 @@ export default class Seller extends Component {
               }
             </div>
         }
-        { currentScreen === "mortgageSmartContract" && <MortgageSmartContract requestId={requestId} /> }
+        { currentScreen === "chooseAppraiser" && <AppraiserStep mortgageId={requestId} />}
       </div>
     )
   }

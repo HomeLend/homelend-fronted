@@ -6,6 +6,9 @@ const SET_CREDIT_RANK = "SET_CREDIT_RANK";
 const ADD_OFFER = "ADD_OFFER";
 const ACCEPT_OFFER = "ACCEPT_OFFER";
 const APPROVE_CONDITION = "APPROVE_CONDITION";
+const CHOOSE_APPRAISER = "CHOOSE_APPRAISER";
+const APPRAISER_EVALUATION= "APPRAISER_EVALUATION";
+const CREATE_CONTRACT= "CREATE_CONTRACT";
 
 export const requestMortgage = data => {
   const action = {
@@ -57,6 +60,36 @@ export const setApproveCondition = (mortgageId, approveString) => {
 
 
 
+export const setAppraiser = (mortgageId, appraiserId) => {
+  const action = {
+    type: CHOOSE_APPRAISER,
+    data: {mortgageId, appraiserId},
+  }
+  return store.dispatch(action);
+}
+
+
+
+export const appraiserEvaluation = (mortgageId, value) => {
+  const action = {
+    type: APPRAISER_EVALUATION,
+    data: {mortgageId, value},
+  }
+  return store.dispatch(action);
+}
+
+
+
+export const createContract = (mortgageId) => {
+  const action = {
+    type: CREATE_CONTRACT,
+    data: {mortgageId},
+  }
+  return store.dispatch(action);
+}
+
+
+
 
 const initialState = {};
 
@@ -83,6 +116,17 @@ export default function runtime(state = initialState, action) {
       return newState;
     case APPROVE_CONDITION:
       set(newState, [action.data.mortgageId, 'conditions', action.data.approveString], true);
+      return newState;
+    case CHOOSE_APPRAISER:
+      set(newState, [action.data.mortgageId, 'appraiser'], {appraiserId: action.data.appraiserId});
+      // set(newState, [action.data.mortgageId, 'STATUS'], 'waitingForAppraisal');
+      return newState;
+    case APPRAISER_EVALUATION:
+      set(newState, [action.data.mortgageId, 'conditions', 'propertyValueOk'], true);
+      set(newState, [action.data.mortgageId, 'appraiser', 'value'], action.data.value);
+      return newState;
+    case CREATE_CONTRACT:
+      set(newState, [action.data.mortgageId, 'STATUS'], 'inContract');
       return newState;
     default:
       return state;

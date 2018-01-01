@@ -5,10 +5,11 @@ import { Container, Row, Col } from 'reactstrap';
 // import { getFormData } from '../../components/Smartforms/functions';
 // import { addProperty } from '../../reducers/properties';
 // import LoadingIndicator from '../../components/common/LoadingIndicator';
-import { addTrack } from '../../reducers/tracker';
-import { sGet } from '../../data/constants';
-import { addOffer } from '../../reducers/mortgage';
+import { addTrack } from '../../../reducers/tracker';
+import { sGet } from '../../../data/constants';
+import { addOffer } from '../../../reducers/mortgage';
 import { isEmpty, map, reduce } from 'lodash';
+import MortgageSmartContract from './MortgageSmartContract';
 
 
 export default class Fi extends Component {
@@ -31,7 +32,22 @@ export default class Fi extends Component {
       return result
     }, {})
 
-    if( isEmpty(mortgages)) return null;
+    let approvals = {...sGet('mortgage')};
+
+    approvals = reduce(approvals, (result, row, key) => {
+      if(row.STATUS === 'waitingForApprovals') result[key] = row
+      return result
+    }, {})
+
+
+    if( !isEmpty(approvals) ) return (<div>
+      {map(approvals, (v, k) =>
+        <MortgageSmartContract key={k} requestId={k} />
+      )}
+    </div>)
+
+
+    if ( isEmpty(mortgages) ) return null;
 
     return (
       <div>
