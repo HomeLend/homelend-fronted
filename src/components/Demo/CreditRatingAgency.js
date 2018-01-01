@@ -9,10 +9,10 @@ import { sGet } from '../../data/constants';
 import { isEmpty, map, reduce } from 'lodash';
 import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { addTrack } from '../../reducers/tracker';
-import { setCreditRank } from '../../reducers/mortgage';
+import { setCreditRating } from '../../reducers/mortgage';
 
 
-export default class CreditRankAgency extends Component {
+export default class CreditRatingAgency extends Component {
   constructor(props) {
     super(props);
     this.state = {calculating: {}}
@@ -25,13 +25,13 @@ export default class CreditRankAgency extends Component {
     // }
 
 
-    this.calculateRank = (mortgageId, requestObject) => () => {
+    this.calculateRating = (mortgageId, requestObject) => () => {
       this.setState({calculating: {...this.state.calculating, [mortgageId]: true}})
 
       // Simulating server response delay
       setTimeout(() => {
         this.setState({calculating: {...this.state.calculating, [mortgageId]: false}})
-        setCreditRank({ creditScore: 5, mortgageId});
+        setCreditRating({ creditScore: 5, mortgageId});
         addTrack({ type: "Credit score set", data: {mortgageId, creditScore: 5} })
       }, 2000)
     }
@@ -63,7 +63,7 @@ export default class CreditRankAgency extends Component {
               <Col xs="3">{v.user.idnumber}</Col>
               <Col xs="3">{v.data.mortgageAmount} / {v.data.repaymentYears}</Col>
               <Col xs="3">{v.data.salary}</Col>
-              <Col xs="3">{calculating[k] ? <LoadingIndicator /> : <div className="btn btn-primary" onClick={this.calculateRank(k, v)}>Calculate rank</div>}</Col>
+              <Col xs="3">{calculating[k] ? <LoadingIndicator /> : <div className="btn btn-primary" onClick={this.calculateRating(k, v)}>Calculate rating</div>}</Col>
             </Row>
           )}
         </Container>

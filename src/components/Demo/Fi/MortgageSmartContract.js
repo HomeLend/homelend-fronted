@@ -3,6 +3,7 @@ import { sGet } from '../../../data/constants'
 import { map } from 'lodash'
 import Fa from '@fortawesome/react-fontawesome';
 import { faCheck, faCircle } from '@fortawesome/fontawesome-free-solid'
+import { addTrack } from '../../../reducers/tracker';
 import { createContract } from '../../../reducers/mortgage';
 
 const conditions = [
@@ -10,6 +11,11 @@ const conditions = [
   { condition: 'approve1', text: 'Seller is the rightful owner of the property' },
   { condition: 'approve2', text: 'The property is not bound to any debt' },
 ]
+
+const createNewContract = (mortgageId) => () => {
+  addTrack({type: "Created Smart Contract between seller, buyer and financial institution", data:{mortgageId} })
+  createContract(mortgageId)
+}
 
 const MortgageSmartContract = ({ requestId }) => {
   let isNotSatisfied = false;
@@ -26,7 +32,7 @@ const MortgageSmartContract = ({ requestId }) => {
           </div>
         )}
         {!isNotSatisfied && <div>
-          <div className="btn btn-primary" onClick={() => createContract(requestId)}>Create contract between seller - buyer - financial institution</div>
+          <div className="btn btn-primary" onClick={createNewContract(requestId)}>Create contract between seller - buyer - financial institution</div>
         </div>}
       </div>
     </div>

@@ -9,8 +9,16 @@ import React, { Component } from 'react';
 import { sGet } from '../../data/constants';
 import { isEmpty, map, reduce, get } from 'lodash';
 import { addTrack } from '../../reducers/tracker';
-import { setApproveCondition } from '../../reducers/mortgage';
+import { setApproveCondition, finishContract } from '../../reducers/mortgage';
 
+
+const execFinishContract = (mortgageId) => () => {
+  addTrack({ type: `Government approved ownership title transferal`, data: {mortgageId} })
+  finishContract(mortgageId);
+  addTrack({ type: `Financial institution has transferred funds to seller`, data: {mortgageId} })
+  addTrack({ type: `Mortgage process is now active, monthly payments are required`, data: {mortgageId} })
+  addTrack({ type: `Smart contract sealed`, data: {mortgageId} })
+}
 
 export default class Government extends Component {
   constructor(props) {
@@ -24,11 +32,30 @@ export default class Government extends Component {
   }
   render() {
     let pendingForApproval = {...sGet('mortgage')};
+    let readyToTransferTitle = {...sGet('mortgage')};
 
     pendingForApproval = reduce(pendingForApproval, (result, row, key) => {
       if(row.STATUS === 'waitingForApprovals') result[key] = row
       return result
     }, {})
+
+
+    readyToTransferTitle = reduce(readyToTransferTitle, (result, row, key) => {
+      if(row.STATUS === 'inContract') result[key] = row
+      return result
+    }, {})
+
+
+    if( !isEmpty(readyToTransferTitle)) return (
+      <div>
+        {map(readyToTransferTitle, (v, k) =>
+          <div key={k} onClick={execFinishContract(k)} className="btn btn-primary">
+            Approve title ownership transfer to *buyer*
+          </div>
+        )}
+      </div>
+    );
+
 
     if( isEmpty(pendingForApproval)) return null;
 

@@ -9,6 +9,7 @@ const APPROVE_CONDITION = "APPROVE_CONDITION";
 const CHOOSE_APPRAISER = "CHOOSE_APPRAISER";
 const APPRAISER_EVALUATION= "APPRAISER_EVALUATION";
 const CREATE_CONTRACT= "CREATE_CONTRACT";
+const FINISH_CONTRACT= "FINISH_CONTRACT";
 
 export const requestMortgage = data => {
   const action = {
@@ -20,7 +21,7 @@ export const requestMortgage = data => {
 
 
 
-export const setCreditRank = data => {
+export const setCreditRating = data => {
   const action = {
     type: SET_CREDIT_RANK,
     data,
@@ -90,6 +91,16 @@ export const createContract = (mortgageId) => {
 
 
 
+export const finishContract = (mortgageId) => {
+  const action = {
+    type: FINISH_CONTRACT,
+    data: {mortgageId},
+  }
+  return store.dispatch(action);
+}
+
+
+
 
 const initialState = {};
 
@@ -127,6 +138,9 @@ export default function runtime(state = initialState, action) {
       return newState;
     case CREATE_CONTRACT:
       set(newState, [action.data.mortgageId, 'STATUS'], 'inContract');
+      return newState;
+    case FINISH_CONTRACT:
+      set(newState, [action.data.mortgageId, 'STATUS'], 'finished');
       return newState;
     default:
       return state;

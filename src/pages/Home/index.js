@@ -5,7 +5,7 @@ import Buyer from '../../components/Demo/Buyer/';
 import Fi from '../../components/Demo/Fi/';
 import Government from '../../components/Demo/Government';
 import Appraiser from '../../components/Demo/Appraiser';
-import CreditRankAgency from '../../components/Demo/CreditRankAgency';
+import CreditRatingAgency from '../../components/Demo/CreditRatingAgency';
 import Insurance from '../../components/Demo/Insurance';
 import Tracker from '../../components/Demo/Tracker';
 // import LoadingIndicator from '../../components/common/LoadingIndicator';
@@ -35,7 +35,7 @@ export default class Home extends Component {
         <div style={{height: '66.666%', width: '100%'}} className="d-flex flex-row justify-content-around">
           <div style={{width: '33.333%'}}>
             <Card title={"Insurance body"} style={{height: 'calc(50% - 30px)'}} component={<Insurance />} />
-            <Card title={"Credit rank agency"} style={{height: 'calc(50% - 30px)', marginTop: '30px'}} component={<CreditRankAgency />} />
+            <Card title={"Credit rating agency"} style={{height: 'calc(50% - 30px)', marginTop: '30px'}} component={<CreditRatingAgency />} />
           </div>
           <div style={{width: '33.333%'}}>
             <Card title={"BlockChain tracker"} component={<Tracker />} />

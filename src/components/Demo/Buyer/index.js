@@ -8,7 +8,8 @@ import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
 import { requestMortgage, acceptOffer } from '../../../reducers/mortgage';
 import AppraiserStep from './AppraiserStep';
-
+import Fa from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/fontawesome-free-solid'
 
 const register = {
   fields: [
@@ -63,6 +64,16 @@ export default class Seller extends Component {
       console.log("Accepted offer from bank id " + bankId);
     }
 
+  }
+  componentWillReceiveProps() {
+    const status = sGet(['mortgage', this.state.requestId, 'STATUS']);
+    if(status === "inContract" && this.state.currentScreen !== 'waitingForContractExecution') {
+      this.setState({currentScreen: 'waitingForContractExecution'})
+    }
+
+    if(status === "finished" && this.state.currentScreen !== 'acquisitionFinished') {
+      this.setState({currentScreen: 'acquisitionFinished'})
+    }
   }
   render() {
     const { currentScreen, requestId } = this.state;
@@ -129,6 +140,25 @@ export default class Seller extends Component {
             </div>
         }
         { currentScreen === "chooseAppraiser" && <AppraiserStep mortgageId={requestId} />}
+        { currentScreen === "waitingForContractExecution" &&
+          <div>
+            <h3>CONTRACT IS UNDERWAY</h3>
+            <div className="mt-2 text-justify">
+              Contract between *seller* and *buyer* and *financial institution* is underway, waiting for execution
+            </div>
+            <div className="mt-4 text-justify">
+              <Fa icon={faCircle} style={{margin: '0 10px'}} /> Government approval of title exchange under *buyer*
+            </div>
+          </div>
+        }
+        { currentScreen === "acquisitionFinished" &&
+          <div>
+            <h3>Congratulations!</h3>
+            <div className="mt-2 text-justify">
+              You have successfully taken a mortgage with bank *banknumber*, and now own *address*
+            </div>
+          </div>
+        }
       </div>
     )
   }
