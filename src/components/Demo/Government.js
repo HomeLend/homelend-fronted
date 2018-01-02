@@ -65,7 +65,7 @@ export default class Government extends Component {
         {
           map(pendingForApproval, (v, mortgageId) => {
             const mortgage = sGet(['mortgage', mortgageId]);
-            const property = sGet(['properties', mortgage['propertyId']])
+            const property = sGet(['data', 'properties', mortgage['propertyId']])
 
             const approve1 = get(v, ['conditions', 'approve1']) || false;
             const approve2 = get(v, ['conditions', 'approve2']) || false;

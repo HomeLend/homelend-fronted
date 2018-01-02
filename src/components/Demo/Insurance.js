@@ -33,7 +33,7 @@ export default class Insurance extends Component {
         {
           map(pendingForInsurance, (v, mortgageId) => {
             const mortgage = sGet(['mortgage', mortgageId]);
-            const property = sGet(['properties', mortgage['propertyId']])
+            const property = sGet(['data', 'properties', mortgage['propertyId']])
 
             return (
               <div key={mortgageId} style={{textAlign: 'justify'}}>

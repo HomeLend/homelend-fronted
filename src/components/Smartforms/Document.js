@@ -34,7 +34,7 @@ let bulkSass = debounce(cb => {
   }, {'Content-Type': 'application/json'})
   collectForSass = new Set();
 }, 1000, {leading: true, maxWait: 3000})
-let getImgSass = (id, cb) => {
+let getImgSas = (id, cb) => {
   if(rememberSass[id]) return rememberSass[id];
   collectForSass.add(id);
   bulkSass(cb);
@@ -74,7 +74,7 @@ export default class Document extends React.Component {
     }
 
     this.openLightbox = (img) => () => {
-      setData({name: 'lightbox', data: img})
+      setData({'lightbox': img})
     }
 
     this.state = {uploadingFile: 0};
@@ -99,7 +99,8 @@ export default class Document extends React.Component {
                 <div key={k} className="d-flex flex-row" style={{minHeight: '38px'}}>
                   {map(files[k], (fv, fk) => {
                       // Prevent the user from preceding before re-uploading the invalid files
-                      let thisImage = getImgSass(fv, () => setData({"images_loaded": 1}));
+                      // let thisImage = getImgSas(fv, () => setData({"images_loaded": 1}));
+                      let thisImage = getImgSas(fv, () => console.log("This does not supposed to work (multi sas), view source code one line above"));
                       if(thisImage) return (
                         <div key={fk}>
                           <div id={v.name+fk} style={{background: `url(${thisImage}) no-repeat center center/cover`, cursor: 'pointer', height: thumbnailSize+'px', width: thumbnailSize+'px', borderRadius: '2px', margin: '0 5px', outline: (fv.invalid) ? '5px solid red' : 'none'}} className="short-shadow"/>

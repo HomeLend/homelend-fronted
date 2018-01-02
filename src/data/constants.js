@@ -5,14 +5,12 @@ import promiseMiddleware from 'redux-promise-middleware';
 import forms from '../reducers/form_reducers';
 import data from '../reducers/generalData';
 import tracker from '../reducers/tracker';
-import properties from '../reducers/properties';
 import mortgage from '../reducers/mortgage';
 
 const reducers = combineReducers({
   forms,
   data,
   tracker,
-  properties,
   mortgage,
 })
 export const store = applyMiddleware(promiseMiddleware())(createStore)(reducers);

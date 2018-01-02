@@ -3,7 +3,6 @@ import Form from '../../components/Smartforms';
 import POST from '../../ajax/post';
 import { getFormData } from '../../components/Smartforms/functions';
 import { addTrack } from '../../reducers/tracker';
-import { addProperty } from '../../reducers/properties';
 
 const sellerInputs = {
   fields: [
@@ -19,8 +18,7 @@ export default class Seller extends Component {
 
     this.addTrack = (trackType) => () => {
       POST(`http://localhost:3000/api/v1/seller/confirmed-requests`, getFormData("sell"), (r, s) => {
-        addTrack(trackType)
-        addProperty(r)
+        addTrack(trackType, r)
       })
     }
 

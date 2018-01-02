@@ -5,6 +5,7 @@ import { sGet } from '../../../data/constants'
 import { isEmpty, map, uniqueId } from 'lodash'
 // import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
+import getProperties from '../../../actions/getProperties';
 import { addTrack } from '../../../reducers/tracker';
 import { requestMortgage, acceptOffer } from '../../../reducers/mortgage';
 import AppraiserStep from './AppraiserStep';
@@ -77,9 +78,9 @@ export default class Seller extends Component {
   }
   render() {
     const { currentScreen, requestId } = this.state;
-    const properties = sGet('properties');
+    const properties = sGet(['data', 'properties']);
 
-    if( isEmpty(properties) ) return null;
+    if( isEmpty(properties) ) return getProperties();
 
     let mortgageOffers = sGet(['mortgage', requestId, 'offers']);
 

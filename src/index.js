@@ -14,7 +14,6 @@ function mapStateToProps(state) {
     forms: state.forms,
     data: state.data,
     tracker: state.tracker,
-    properties: state.properties,
     mortgage: state.mortgage,
   };
 }

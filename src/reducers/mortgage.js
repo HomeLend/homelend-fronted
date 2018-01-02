@@ -130,7 +130,6 @@ export default function runtime(state = initialState, action) {
       return newState;
     case CHOOSE_APPRAISER:
       set(newState, [action.data.mortgageId, 'appraiser'], {appraiserId: action.data.appraiserId});
-      // set(newState, [action.data.mortgageId, 'STATUS'], 'waitingForAppraisal');
       return newState;
     case APPRAISER_EVALUATION:
       set(newState, [action.data.mortgageId, 'conditions', 'propertyValueOk'], true);
