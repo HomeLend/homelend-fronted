@@ -7,7 +7,15 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
+import io from 'socket.io-client';
+import { setData } from './reducers/generalData'
 
+export const socket = io('http://localhost:3000', {
+  path: '/sock'
+});
+socket.on('connect', () => console.log("Socket connection established"))
+socket.on('propertiesList', r => setData({"properties": r})
+)
 
 function mapStateToProps(state) {
   return {

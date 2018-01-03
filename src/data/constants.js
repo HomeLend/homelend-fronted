@@ -1,5 +1,4 @@
 import { template, get } from 'lodash'
-
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 import forms from '../reducers/form_reducers';
@@ -13,9 +12,13 @@ const reducers = combineReducers({
   tracker,
   mortgage,
 })
+
+
 export const store = applyMiddleware(promiseMiddleware())(createStore)(reducers);
 
 export const sGet = (p = null) => !p ? store.getState() : get(store.getState(), p);
+
+export const simulateDelay = async (stallTime = 600) => await new Promise(resolve => setTimeout(resolve, stallTime));
 
 export const STORAGE_URL = "changeME!!!";
 
