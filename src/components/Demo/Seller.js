@@ -5,13 +5,21 @@ import POST from '../../ajax/post';
 import { getFormData } from '../../components/Smartforms/functions';
 import { addTrack } from '../../reducers/tracker';
 import { simulateDelay } from '../../data/constants';
+import { map } from 'lodash';
 
-const sellerInputs = {
+let sellerInputs = {
   fields: [
     {name: 'address', default: 'Zhabutinski 25, Ofaqim',type: 'text', label: 'Property address'},
     {name: 'price', default: '122000', type: 'number', label: `Property's price`, size: 6},
-    {name: 'idnumber', default: '312170632', type: 'number', label: `Government seller ID`, size: 6},
+    {name: 'email', default: 'bobby@gmail.com', type: 'text', label: `E-mail`, size: 6},
   ]
+}
+
+let sellerEmail = localStorage.getItem("sellerEmail");
+if(sellerEmail) {
+  map(sellerInputs.fields, v => {
+    if(v.name === 'email') v.default = sellerEmail;
+  })
 }
 
 export default class Seller extends Component {
@@ -23,7 +31,9 @@ export default class Seller extends Component {
     this.addProperty = (trackType) => async () => {
       this.setState({view: 'loading'})
       await simulateDelay(); // for development
-      POST(`http://localhost:3000/api/v1/seller/confirmed-requests`, getFormData("sell"), (r, s) => {
+      const formData = getFormData("sell");
+      POST(`http://localhost:3000/api/v1/seller/confirmed-requests`, formData, (r, s) => {
+        localStorage.setItem('sellerEmail', formData.email);
         addTrack(trackType, r)
         this.setState({view: 'main'})
       })

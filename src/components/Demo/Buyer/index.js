@@ -6,7 +6,7 @@ import { isEmpty, map, uniqueId } from 'lodash'
 // import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
-import { requestMortgage, acceptOffer } from '../../../reducers/mortgage';
+import { requestMortgage, acceptOffer, setApproveCondition } from '../../../reducers/mortgage';
 import AppraiserStep from './AppraiserStep';
 import Fa from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/fontawesome-free-solid'
@@ -64,13 +64,23 @@ export default class Seller extends Component {
       console.log("Accepted offer from bank id " + bankId);
     }
 
+    this.acceptInsuranceOffer = (requestId, insuranceId) => () => {
+      setApproveCondition(requestId,"insuranceOfferOk");
+      this.setState({currentScreen: 'chooseAppraiser', requestId: insuranceId})
+      addTrack({type: "Insurance created", data:{insuranceId} })
+      acceptOffer(requestId, insuranceId)
+      console.log("Accepted insurance offer from insurance id " + insuranceId);
+    }
+
   }
   componentWillReceiveProps() {
     const status = sGet(['mortgage', this.state.requestId, 'STATUS']);
     if(status === "inContract" && this.state.currentScreen !== 'waitingForContractExecution') {
       this.setState({currentScreen: 'waitingForContractExecution'})
     }
-
+    if(status === "waitingForInsurance") {
+      this.setState({currentScreen: 'insurance'})
+    }
     if(status === "finished" && this.state.currentScreen !== 'acquisitionFinished') {
       this.setState({currentScreen: 'acquisitionFinished'})
     }
@@ -82,6 +92,8 @@ export default class Seller extends Component {
     if(isEmpty(properties) ) return null;
 
     let mortgageOffers = sGet(['mortgage', requestId, 'offers']);
+
+    let insuranceOffers = sGet(['mortgage', requestId, 'insuranceOffers']);
 
     return (
       <div>
@@ -138,6 +150,29 @@ export default class Seller extends Component {
                   </Container>
               }
             </div>
+        }
+        {currentScreen === "insurance" &&
+        <div>
+          {
+            !insuranceOffers ?
+              <AppraiserStep mortgageId={requestId}/> :
+              <Container>
+                <Row>
+                  <Col xs="4">Insurance id</Col>
+                  <Col xs="4">Offer</Col>
+                  <Col xs="4">Action</Col>
+                </Row>
+                {map(insuranceOffers, (v, insuranceId) =>
+                  v && // If offer is not null
+                  <Row key={insuranceId} className="d-flex align-items-center">
+                    <Col xs="4">{insuranceId}</Col>
+                    <Col xs="4">{v.offer}</Col>
+                    <Col xs="4"><div className="btn btn-primary" onClick={this.acceptInsuranceOffer(requestId, insuranceId)}>Accept</div></Col>
+                  </Row>
+                )}
+              </Container>
+          }
+        </div>
         }
         { currentScreen === "chooseAppraiser" && <AppraiserStep mortgageId={requestId} />}
         { currentScreen === "waitingForContractExecution" &&
