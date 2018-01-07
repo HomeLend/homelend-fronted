@@ -8,6 +8,7 @@ import { createContract } from '../../../reducers/mortgage';
 
 const conditions = [
   { condition: 'propertyValueOk', text: 'The property is worth at least XXX amount (Appraiser)' },
+  { condition: 'insuranceOfferOk', text: 'The buyer purchased an insurance for the mortgage' },
   { condition: 'approve1', text: 'Seller is the rightful owner of the property' },
   { condition: 'approve2', text: 'The property is not bound to any debt' },
 ]
@@ -24,13 +25,15 @@ const MortgageSmartContract = ({ requestId }) => {
     <div>
       <h5>The mortgage request is pending for approval</h5>
       <div className="d-flex flex-column text-justify mt-5">
-        {map(conditions, (v, k) =>
-          <div key={k}>
-            {sGet(['mortgage', requestId, 'conditions', v.condition]) ?
-              <Fa icon={faCheck} style={{margin: '0 10px'}} /> :
-              <Fa icon={faCircle} style={{margin: '0 10px'}} />} {v.text}
-          </div>
-        )}
+        {
+          map(conditions, (v, k) =>
+            <div key={k}>
+              {sGet(['mortgage', requestId, 'conditions', v.condition]) ?
+                <Fa icon={faCheck} style={{margin: '0 10px'}} /> :
+                <Fa icon={faCircle} style={{margin: '0 10px'}} />} {v.text}
+            </div>
+          )
+        }
         {!isNotSatisfied && <div>
           <div className="btn btn-primary" onClick={createNewContract(requestId)}>Create contract between seller - buyer - financial institution</div>
         </div>}
