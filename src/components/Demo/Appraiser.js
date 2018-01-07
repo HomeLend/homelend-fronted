@@ -10,6 +10,7 @@ import { sGet } from '../../data/constants';
 import { isEmpty, map, reduce, get } from 'lodash';
 import { addTrack } from '../../reducers/tracker';
 import { appraiserEvaluation } from '../../reducers/mortgage';
+import numeral from 'numeral';
 
 
 const propertyWorth = {
@@ -61,8 +62,8 @@ export default class Government extends Component {
                     <div>
                       <Form data={propertyWorth} name="worth" />
                       {sGet(['forms', 'worth', 'worth']) >= parseInt(property.price, 10) ?
-                        <div onClick={this.approveCondition(mortgageId, "approve3")} className={`btn btn-primary w-100 mt-2 ${sGet(['forms', 'worth', 'worth']) < 100 ? 'disabled' : ''}`}>The property is worth at least {property['price']} amount</div>:
-                        <div className="btn btn-danger w-100 mt-2" style={{border: 'none'}} onClick={() => alert("This will terminate the contract!")}>The property is worth less than {property['price']}</div>
+                        <div onClick={this.approveCondition(mortgageId, "approve3")} className={`btn btn-primary w-100 mt-2 ${sGet(['forms', 'worth', 'worth']) < 100 ? 'disabled' : ''}`}>The property is worth at least {numeral(property['price']).format()} amount</div>:
+                        <div className="btn btn-danger w-100 mt-2" style={{border: 'none'}} onClick={() => alert("This will terminate the contract!")}>The property is worth less than {numeral(property['price']).format()}</div>
                       }
                     </div>
                   }

@@ -10,6 +10,7 @@ import { sGet } from '../../../data/constants';
 import { addOffer } from '../../../reducers/mortgage';
 import { isEmpty, map, reduce } from 'lodash';
 import MortgageSmartContract from './MortgageSmartContract';
+import numeral from 'numeral';
 
 
 export default class Fi extends Component {
@@ -71,8 +72,8 @@ export default class Fi extends Component {
             return (
               <Row key={k} className="d-flex align-items-center">
                 <Col xs="3">{v.user.idnumber}</Col>
-                <Col xs="3">{v.data.mortgageAmount} / {v.data.repaymentYears}</Col>
-                <Col xs="3">{v.creditScore} / {monthlyPayment}</Col>
+                <Col xs="3">{numeral(v.data.mortgageAmount).format()} / {v.data.repaymentYears}</Col>
+                <Col xs="3">{v.creditScore} / {numeral(monthlyPayment).format()}</Col>
                 <Col xs="3"><div className="btn btn-primary" onClick={this.sendMortgageProposal(k, monthlyPayment)}>Send Proposal</div></Col>
               </Row>
             )

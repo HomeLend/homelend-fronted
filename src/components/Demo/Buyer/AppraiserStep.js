@@ -4,6 +4,7 @@ import { sGet } from '../../../data/constants'
 import { map, get } from 'lodash'
 import { addTrack } from '../../../reducers/tracker';
 import { setAppraiser } from '../../../reducers/mortgage';
+import numeral from 'numeral';
 
 export default class AppraiserStep extends Component {
   constructor(props) {
@@ -32,7 +33,7 @@ export default class AppraiserStep extends Component {
           {!evaluation ?
             <div className="mt-3 text-justify">Waiting for Appraiser's evaluation...</div> :
             <div>
-              Evaluation is set at <strong>{evaluation}</strong>
+              Evaluation is set at <strong>{numeral(evaluation).format()}</strong>
             </div>
           }
         </div>

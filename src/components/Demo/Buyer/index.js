@@ -10,6 +10,7 @@ import { requestMortgage, acceptOffer, setApproveCondition } from '../../../redu
 import AppraiserStep from './AppraiserStep';
 import Fa from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/fontawesome-free-solid'
+import numeral from 'numeral'
 
 const register = {
   fields: [
@@ -104,7 +105,7 @@ export default class Seller extends Component {
                 <Row key={k} style={{marginBottom: '20px'}}>
                   <Col>{v.address}</Col>
                   <Col><div className="btn btn-primary" onClick={this.buyProperty(k)}>Buy now</div></Col>
-                  <Col>{v.price}</Col>
+                  <Col>{numeral(v.price).format()}</Col>
                   <Col style={{maxWidth: '75px', padding: 0}}><img style={{maxHeight: '45px'}} src={`/media/images/properties/${k}.jpg`} alt="" /></Col>
                 </Row>
               )
@@ -143,7 +144,7 @@ export default class Seller extends Component {
                       v && // If offer is not null
                       <Row key={bankId} className="d-flex align-items-center">
                         <Col xs="4">{bankId}</Col>
-                        <Col xs="4">{v.amount}</Col>
+                        <Col xs="4">{numeral(v.amount).format()}</Col>
                         <Col xs="4"><div className="btn btn-primary" onClick={this.acceptOffer(requestId, bankId)}>Accept</div></Col>
                       </Row>
                     )}
@@ -166,7 +167,7 @@ export default class Seller extends Component {
                   v && // If offer is not null
                   <Row key={insuranceId} className="d-flex align-items-center">
                     <Col xs="4">{insuranceId}</Col>
-                    <Col xs="4">{v.offer}</Col>
+                    <Col xs="4">{numeral(v.offer).format()}</Col>
                     <Col xs="4"><div className="btn btn-primary" onClick={this.acceptInsuranceOffer(requestId, insuranceId)}>Accept</div></Col>
                   </Row>
                 )}

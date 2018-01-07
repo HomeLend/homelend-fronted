@@ -10,6 +10,7 @@ import { isEmpty, map, reduce } from 'lodash';
 import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { addTrack } from '../../reducers/tracker';
 import { setCreditRating } from '../../reducers/mortgage';
+import numeral from 'numeral';
 
 
 export default class CreditRatingAgency extends Component {
@@ -61,7 +62,7 @@ export default class CreditRatingAgency extends Component {
           {map(pendingForCreditScore, (v, k) =>
             <Row key={k} className="d-flex align-items-center">
               <Col xs="3">{v.user.idnumber}</Col>
-              <Col xs="3">{v.data.mortgageAmount} / {v.data.repaymentYears}</Col>
+              <Col xs="3">{numeral(v.data.mortgageAmount).format()} / {v.data.repaymentYears}</Col>
               <Col xs="3">{v.data.salary}</Col>
               <Col xs="3">{calculating[k] ? <LoadingIndicator /> : <div className="btn btn-primary" onClick={this.calculateRating(k, v)}>Calculate rating</div>}</Col>
             </Row>

@@ -13,7 +13,7 @@ import {addTrack} from "../../reducers/tracker";
 // import {getFormData} from "../Smartforms/functions";
 // import { addTrack } from '../../reducers/tracker';
 // import { setApproveCondition } from '../../reducers/mortgage';
-
+import numeral from 'numeral';
 
 export default class Insurance extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ export default class Insurance extends Component {
                 Mortgage id {mortgageId} is waiting for insurance offers:
                 <div style={{margin: '10px'}}><strong>Full Name: </strong>{mortgage.user.fullName}</div>
                 <div style={{margin: '10px'}}><strong>Address: </strong>{property['address']}</div>
-                <div style={{margin: '10px'}}><strong>Price: </strong>{property['price']}</div>
+                <div style={{margin: '10px'}}><strong>Price: </strong>{numeral(property['price']).format()}</div>
                 <div className="btn btn-primary" onClick={this.sendInsuranceOffer(mortgageId, "Offer 1")}>Send offer</div>
               </div>
             )
