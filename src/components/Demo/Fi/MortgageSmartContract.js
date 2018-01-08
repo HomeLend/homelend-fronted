@@ -1,13 +1,14 @@
 import React from 'react';
 import { sGet } from '../../../data/constants'
-import { map } from 'lodash'
+import { map, template } from 'lodash'
 import Fa from '@fortawesome/react-fontawesome';
 import { faCheck, faCircle } from '@fortawesome/fontawesome-free-solid'
 import { addTrack } from '../../../reducers/tracker';
 import { createContract } from '../../../reducers/mortgage';
+import numeral from 'numeral';
 
 const conditions = [
-  { condition: 'propertyValueOk', text: 'The property is worth at least XXX amount (Appraiser)' },
+  { condition: 'propertyValueOk', text: 'The property is worth at least ${propertyPrice} amount (Appraiser)' }, // eslint-disable-line
   { condition: 'insuranceOfferOk', text: 'The buyer purchased an insurance for the mortgage' },
   { condition: 'approve1', text: 'Seller is the rightful owner of the property' },
   { condition: 'approve2', text: 'The property is not bound to any debt' },
@@ -20,6 +21,7 @@ const createNewContract = (mortgageId) => () => {
 
 const MortgageSmartContract = ({ requestId }) => {
   let isNotSatisfied = false;
+  const mortgage = sGet(['mortgage', requestId]);
   map(conditions, v => {isNotSatisfied = isNotSatisfied || !sGet(['mortgage', requestId, 'conditions', v.condition])})
   return (
     <div>
@@ -30,7 +32,7 @@ const MortgageSmartContract = ({ requestId }) => {
             <div key={k}>
               {sGet(['mortgage', requestId, 'conditions', v.condition]) ?
                 <Fa icon={faCheck} style={{margin: '0 10px'}} /> :
-                <Fa icon={faCircle} style={{margin: '0 10px'}} />} {v.text}
+                <Fa icon={faCircle} style={{margin: '0 10px'}} />} {template(v.text)({ propertyPrice: numeral(mortgage.data.mortgageAmount).format() })}
             </div>
           )
         }

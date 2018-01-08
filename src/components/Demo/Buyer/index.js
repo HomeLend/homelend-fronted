@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from '../../Smartforms/index';
 import { Container, Row, Col } from 'reactstrap';
 import { sGet } from '../../../data/constants'
-import { isEmpty, map, uniqueId } from 'lodash'
+import { isEmpty, map, uniqueId, get } from 'lodash'
 // import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
@@ -92,9 +92,11 @@ export default class Seller extends Component {
 
     if(isEmpty(properties) ) return null;
 
-    let mortgageOffers = sGet(['mortgage', requestId, 'offers']);
+    let mortgage = sGet(['mortgage', requestId]);
 
-    let insuranceOffers = sGet(['mortgage', requestId, 'insuranceOffers']);
+    let mortgageOffers = get(mortgage, ['offers']);
+
+    let insuranceOffers = get(mortgage, ['insuranceOffers']);
 
     return (
       <div>
@@ -180,10 +182,10 @@ export default class Seller extends Component {
           <div>
             <h3>CONTRACT IS UNDERWAY</h3>
             <div className="mt-2 text-justify">
-              Contract between *seller* and *buyer* and *financial institution* is underway, waiting for execution
+              Contract between the current property owner, {mortgage.user.fullName}(buyer) and bank ID: {mortgage.acceptedOffer.bankId} is underway, waiting for execution
             </div>
             <div className="mt-4 text-justify">
-              <Fa icon={faCircle} style={{margin: '0 10px'}} /> Government approval of title exchange under *buyer*
+              <Fa icon={faCircle} style={{margin: '0 10px'}} /> Government approval of title exchange under {mortgage.user.fullName}
             </div>
           </div>
         }
@@ -191,7 +193,7 @@ export default class Seller extends Component {
           <div>
             <h3>Congratulations!</h3>
             <div className="mt-2 text-justify">
-              You have successfully taken a mortgage with bank *banknumber*, and now own *address*
+              You have successfully taken a mortgage with bank {mortgage.acceptedOffer.bankId}, and now own {properties[mortgage.propertyId].address}
             </div>
           </div>
         }

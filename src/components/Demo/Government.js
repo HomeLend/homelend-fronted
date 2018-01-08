@@ -50,7 +50,7 @@ export default class Government extends Component {
       <div>
         {map(readyToTransferTitle, (v, k) =>
           <div key={k} onClick={execFinishContract(k)} className="btn btn-primary">
-            Approve title ownership transfer to *buyer*
+            Approve title ownership transfer to {v.user.fullName}
           </div>
         )}
       </div>
