@@ -8,7 +8,7 @@ import { createContract } from '../../../reducers/mortgage';
 import numeral from 'numeral';
 
 const conditions = [
-  { condition: 'propertyValueOk', text: 'The property is worth at least ${propertyPrice} amount (Appraiser)' }, // eslint-disable-line
+  { condition: 'propertyValueOk', text: 'The property is worth at least ${propertyPrice} amount' }, // eslint-disable-line
   { condition: 'insuranceOfferOk', text: 'The buyer purchased an insurance for the mortgage' },
   { condition: 'approve1', text: 'Seller is the rightful owner of the property' },
   { condition: 'approve2', text: 'The property is not bound to any debt' },

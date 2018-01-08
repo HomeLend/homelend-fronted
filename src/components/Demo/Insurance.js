@@ -48,7 +48,7 @@ export default class Insurance extends Component {
                 Mortgage id {mortgageId} is waiting for insurance offers:
                 <div style={{margin: '10px'}}><strong>Full Name: </strong>{mortgage.user.fullName}</div>
                 <div style={{margin: '10px'}}><strong>Address: </strong>{property['address']}</div>
-                <div style={{margin: '10px'}}><strong>Price: </strong>{numeral(property['price']).format()}</div>
+                <div style={{margin: '10px'}}><strong>Mortgage amount: </strong>{numeral(mortgage.data.mortgageAmount).format()}</div>
                 <div className="btn btn-primary" onClick={this.sendInsuranceOffer(mortgageId, "Offer 1")}>Send offer</div>
               </div>
             )
