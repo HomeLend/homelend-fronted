@@ -3,7 +3,7 @@ import Form from '../../Smartforms/index';
 import { Container, Row, Col } from 'reactstrap';
 import { sGet } from '../../../data/constants'
 import { isEmpty, map, uniqueId, get } from 'lodash'
-// import POST from '../../../ajax/post';
+import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
 import { requestMortgage, acceptOffer, setApproveCondition } from '../../../reducers/mortgage';
@@ -35,14 +35,18 @@ export default class Seller extends Component {
     this.state = {currentScreen: 'browseProperties', requestId: false}
 
     this.buyProperty = (propertyId) => () => {
-      // POST(`http://localhost:3000/api/v1/buyer/`, {propertyId}, console.log)
       this.setState({currentScreen: 'buyerRegister', propertyChosen: propertyId})
     }
 
 
     this.register = () => {
       const data = getFormData('buyerRegister');
-      // POST(`http://localhost:3000/api/v1/buyer/register`, {propertyId}, console.log)
+      POST(`http://localhost:3000/api/v1/buyer/buy`, {
+        email: data.email,
+        idNumber: 123,
+        fullName: data.fullName,
+        propertyHash: this.state.propertyChosen,
+      }, console.log)
       this.setState({currentScreen: 'requestMortgage'})
       addTrack({type: "New user", data })
     }

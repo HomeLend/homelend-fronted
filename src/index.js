@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import io from 'socket.io-client';
 import { setData } from './reducers/generalData'
 
-export const socket = io('13.93.108.198:3000', {
+export const socket = io('localhost:3000', {
   path: '/sock'
 });
 socket.on('connect', () => console.log("Socket connection established"))

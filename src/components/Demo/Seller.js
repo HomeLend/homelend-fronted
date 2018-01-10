@@ -10,8 +10,10 @@ import { map } from 'lodash';
 let sellerInputs = {
   fields: [
     {name: 'address', default: 'Zhabutinski 25, Ofaqim',type: 'text', label: 'Property address'},
-    {name: 'price', default: '122000', type: 'number', label: `Property's price`, size: 6},
+    {name: 'fullName', default: 'Vinod Morkile', type: 'text', label: `Full name`, size: 6},
     {name: 'email', default: 'bobby@gmail.com', type: 'text', label: `E-mail`, size: 6},
+    {name: 'idNumber', default: 312170632, type: 'number', label: `ID number`, size: 6},
+    {name: 'sellingPrice', default: 122000, type: 'number', label: `Property's price`, size: 6},
   ]
 }
 
@@ -32,7 +34,7 @@ export default class Seller extends Component {
       this.setState({view: 'loading'})
       await simulateDelay(); // for development
       const formData = getFormData("sell");
-      POST(`${'http://13.93.108.198:3000'}/api/v1/seller/confirmed-requests`, formData, (r, s) => {
+      POST(`${'http://localhost:3000'}/api/v1/seller/advertise`, formData, (r, s) => {
         localStorage.setItem('sellerEmail', formData.email);
         addTrack(trackType, r)
         this.setState({view: 'main'})
