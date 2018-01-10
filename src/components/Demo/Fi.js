@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-// import Form from '../../components/Smartforms';
-// import POST from '../../ajax/post';
-// import { getFormData } from '../../components/Smartforms/functions';
-// import { addProperty } from '../../reducers/properties';
-// import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { addTrack } from '../../reducers/tracker';
 import { sGet } from '../../data/constants';
 import { addOffer } from '../../reducers/mortgage';

@@ -10,7 +10,7 @@ export default class Seller extends Component {
     return (
       <div>
         {map(tracker, (v, k) => (
-          <div className="w-100" style={{background: 'gray', color: 'white', padding: '10px', margin: '5px'}} key={k}>
+          <div className="w-100" style={{background: 'gray', color: 'white', padding: '10px', overflow: 'auto'}} key={k}>
             <strong>{v.type + ` `}</strong>
             {v.data && JSON.stringify(v.data)}
           </div>

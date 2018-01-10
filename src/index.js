@@ -8,14 +8,12 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import io from 'socket.io-client';
-import { setData } from './reducers/generalData'
+import socketEventsLoad from './socket/load';
 
 export const socket = io('localhost:3000', {
   path: '/sock'
 });
-socket.on('connect', () => console.log("Socket connection established"))
-socket.on('propertiesList', r => setData({"properties": r})
-)
+socketEventsLoad(socket)
 
 function mapStateToProps(state) {
   return {

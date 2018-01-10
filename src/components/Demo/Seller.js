@@ -30,13 +30,14 @@ export default class Seller extends Component {
 
     this.state = {view: 'main'};
 
-    this.addProperty = (trackType) => async () => {
+    this.addProperty = () => async () => {
       this.setState({view: 'loading'})
       await simulateDelay(); // for development
       const formData = getFormData("sell");
       POST(`${'http://localhost:3000'}/api/v1/seller/advertise`, formData, (r, s) => {
         localStorage.setItem('sellerEmail', formData.email);
-        addTrack(trackType, r)
+        console.log(r, s);
+        addTrack({type: 'New property', data: r})
         this.setState({view: 'main'})
       })
     }
@@ -56,7 +57,7 @@ export default class Seller extends Component {
           view === 'post' &&
             <div>
               <Form data={sellerInputs} name="sell"/>
-              <div className="btn btn-primary" onClick={this.addProperty({type: 'New property'})}>Post a new property</div>
+              <div className="btn btn-primary" onClick={this.addProperty()}>Post a new property</div>
             </div>
         }
         {
