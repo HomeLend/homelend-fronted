@@ -3,7 +3,7 @@ import { reduce } from 'lodash'
 
 
 
-const load = (socket) => {
+const load = socket => {
 
   socket.on('connect', () => console.log("Socket connection established"))
 
@@ -22,6 +22,12 @@ const load = (socket) => {
 
     setData({"properties": props})
   })
+
+  socket.on('CreditRatingList', (data) => {
+    console.log("Socket CreditRatingList received", data);
+    // setData({"properties": props})
+  })
+
 
 }
 

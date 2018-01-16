@@ -6,6 +6,8 @@ import LoadingIndicator from '../../components/common/LoadingIndicator';
 import { addTrack } from '../../reducers/tracker';
 import { setCreditRating } from '../../reducers/mortgage';
 import numeral from 'numeral';
+import POST from '../../ajax/post';
+import { socket } from '../../index';
 
 
 export default class CreditRatingAgency extends Component {
@@ -20,16 +22,37 @@ export default class CreditRatingAgency extends Component {
     //   })
     // }
 
+    this.fetchData = () => {
+      console.log("fetched");
+      // socket.emit('getCreditRankList');
 
-    this.calculateRating = (mortgageId, requestObject) => () => {
-      this.setState({calculating: {...this.state.calculating, [mortgageId]: true}})
 
-      // Simulating server response delay
-      setTimeout(() => {
-        this.setState({calculating: {...this.state.calculating, [mortgageId]: false}})
-        setCreditRating({ creditScore: 5, mortgageId});
-        addTrack({ type: "Credit score set", data: {mortgageId, creditScore: 5} })
-      }, 2000)
+			POST(`${'http://localhost:3000'}/api/v1/creditscore/pull`, {buyerHash: sGet('data.buyerHash')}, (r, s) => {
+        console.log("RES", r, s);
+			});
+    }
+
+    this.calculateRating = (requestObject) => () => {
+
+			console.log(requestObject);
+
+      POST(`${'http://localhost:3000'}/api/v1/creditscore/calculate`, {
+        licenseNumber: '125',
+        name: 'DummyCreditRankAgency',
+        userHash: sGet('data.userHash'),
+        requestHash: requestObject.propertyId,
+      }, (r, s) => {
+        console.log(r, s)
+      });
+
+      // this.setState({calculating: {...this.state.calculating, [mortgageId]: true}})
+			//
+      // // Simulating server response delay
+      // setTimeout(() => {
+      //   this.setState({calculating: {...this.state.calculating, [mortgageId]: false}})
+      //   setCreditRating({ creditScore: 5, mortgageId});
+      //   addTrack({ type: "Credit score set", data: {mortgageId, creditScore: 5} })
+      // }, 2000)
     }
 
   }
@@ -38,7 +61,7 @@ export default class CreditRatingAgency extends Component {
     let pendingForCreditScore = {...sGet('mortgage')};
 
     pendingForCreditScore = reduce(pendingForCreditScore, (result, row, key) => {
-      if(row.STATUS === 'pendingForCreditScore') result[key] = row
+      if (row.STATUS === 'pendingForCreditScore') result[key] = row
       return result
     }, {})
 
@@ -46,6 +69,7 @@ export default class CreditRatingAgency extends Component {
 
     return (
       <div>
+        <div onClick={this.fetchData}>FETCH</div>
         <Container style={{marginTop: '20px'}}>
           <Row>
             <Col xs="3">Client ID</Col>
@@ -59,7 +83,7 @@ export default class CreditRatingAgency extends Component {
               <Col xs="3">{v.user.idnumber}</Col>
               <Col xs="3">{numeral(v.data.mortgageAmount).format()} / {v.data.repaymentYears}</Col>
               <Col xs="3">{v.data.salary}</Col>
-              <Col xs="3">{calculating[k] ? <LoadingIndicator /> : <div className="btn btn-primary" onClick={this.calculateRating(k, v)}>Calculate rating</div>}</Col>
+              <Col xs="3">{calculating[k] ? <LoadingIndicator /> : <div className="btn btn-primary" onClick={this.calculateRating(v)}>Calculate rating</div>}</Col>
             </Row>
           )}
         </Container>

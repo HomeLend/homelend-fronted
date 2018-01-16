@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from '../../Smartforms/index';
 import { Container, Row, Col } from 'reactstrap';
 import { sGet } from '../../../data/constants'
-import { isEmpty, map, uniqueId, get } from 'lodash'
+import { isEmpty, map, get } from 'lodash'
 import POST from '../../../ajax/post';
 import { getFormData } from '../../Smartforms/functions';
 import { addTrack } from '../../../reducers/tracker';
@@ -11,6 +11,8 @@ import AppraiserStep from './AppraiserStep';
 import Fa from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/fontawesome-free-solid'
 import numeral from 'numeral'
+import LoadingIndicator from '../../common/LoadingIndicator'
+import { setData } from '../../../reducers/generalData'
 
 const register = {
   fields: [
@@ -40,26 +42,37 @@ export default class Seller extends Component {
 
 
     this.register = () => {
-      const data = getFormData('buyerRegister');
-      POST(`http://localhost:3000/api/v1/buyer/buy`, {
-        email: data.email,
-        idNumber: 123,
-        fullName: data.fullName,
-        propertyHash: this.state.propertyChosen,
-      }, console.log)
-      this.setState({currentScreen: 'requestMortgage'})
-      addTrack({type: "New user", data })
+			this.setState({currentScreen: 'requestMortgage'})
     }
 
 
     this.requestMortgage = () => {
-      const data = getFormData('requestMortgage');
-      const newId = uniqueId();
-      const newRequest = {[newId]: {STATUS:'pendingForCreditScore', data, user: getFormData('buyerRegister'), propertyId: this.state.propertyChosen}};
-      // POST(`http://localhost:3000/api/v1/buyer/register`, {propertyId}, console.log)
-      this.setState({currentScreen: 'waiting4Offers', requestId: newId})
-      addTrack({type: "Mortgage request", newRequest })
-      requestMortgage(newRequest)
+      const requestDetails = getFormData('requestMortgage');
+
+
+
+			this.setState({loading: true})
+			const registerDetails = getFormData('buyerRegister');
+			POST(`http://localhost:3000/api/v1/buyer/buy`, {
+				email: registerDetails.email,
+				idNumber: registerDetails.idnumber,
+				fullName: registerDetails.fullName,
+				propertyHash: this.state.propertyChosen,
+				salary: requestDetails.salary,
+				loanAmount: requestDetails.mortgageAmount,
+			}, (r, s) => {
+				if(s !== 200) { this.setState({loading: false}); return alert("Oops, status " + s); }
+				const { txId, userHash } = r;
+				this.setState({requestId: txId, currentScreen: 'waiting4Offers', loading: false})
+				setData({buyerHash: userHash})
+				addTrack({type: "New user", data: {...registerDetails, userHash} })
+
+				const newRequest = {[txId]: {STATUS:'pendingForCreditScore', data: requestDetails, user: getFormData('buyerRegister'), propertyId: this.state.propertyChosen}};
+				requestMortgage(newRequest)
+				addTrack({type: "Mortgage request", newRequest })
+
+			})
+
     }
 
     this.acceptOffer = (requestId, bankId) => () => {
@@ -91,7 +104,7 @@ export default class Seller extends Component {
     }
   }
   render() {
-    const { currentScreen, requestId } = this.state;
+    const { currentScreen, requestId, loading = false } = this.state;
     const properties = sGet(['data', 'properties']);
 
     if(isEmpty(properties) ) return null;
@@ -102,6 +115,8 @@ export default class Seller extends Component {
 
     let insuranceOffers = get(mortgage, ['insuranceOffers']);
 
+    if(loading) return <LoadingIndicator/>;
+
     return (
       <div>
         <Container>
@@ -110,7 +125,7 @@ export default class Seller extends Component {
               map(properties, (v, k) =>
                 <Row key={k} style={{marginBottom: '20px'}}>
                   <Col>{v.address}</Col>
-                  <Col><div className="btn btn-primary" onClick={this.buyProperty(k)}>Buy now</div></Col>
+                  <Col><div className="btn btn-primary" onClick={this.buyProperty(v.hash)}>Buy now</div></Col>
                   <Col>{numeral(v.price).format()}</Col>
                   <Col style={{maxWidth: '75px', padding: 0}}><img style={{maxHeight: '45px'}} src={`/media/images/properties/${k}.jpg`} alt="" /></Col>
                 </Row>
