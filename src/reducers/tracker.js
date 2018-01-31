@@ -22,7 +22,8 @@ const initialState = [];
 export default function runtime(state = initialState, action) {
   switch (action.type) {
     case ADD_TRACK:
-      return concat(action.data, state);
+      let res = concat(action.data, state);
+      return res;
     default:
       return state;
   }

@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ae8c6532-e116-4835-a4ba-a747b5ba86d6" name="Default" comment="Works up to calculate rank">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/Demo/Fi.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" afterPath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js" afterPath="$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" afterPath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js" afterPath="$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Fi/index.js" afterPath="$PROJECT_DIR$/src/components/Demo/Fi/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Tracker.js" afterPath="$PROJECT_DIR$/src/components/Demo/Tracker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home/index.js" afterPath="$PROJECT_DIR$/src/pages/Home/index.js" />
+    </list>
+    <ignored path=".idea/homelend.iml" />
+    <ignored path=".idea/misc.xml" />
+    <ignored path=".idea/modules.xml" />
+    <ignored path=".idea/vcs.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileColors">
+    <fileColor scope="Non-Project Files (Material Oceanic)" color="2E3C43" />
+    <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
+    <fileColor scope="Non-Project Files (Material Lighter)" color="eae8e8" />
+    <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AppraiserStep.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="26" column="89" lean-forward="false" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+              <folding>
+                <element signature="e#95#150#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditRatingAgency.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+              <folding>
+                <element signature="e#95#148#0" expanded="true" />
+                <element signature="e#312#358#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Seller.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Seller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="44" column="112" lean-forward="false" selection-start-line="44" selection-start-column="112" selection-end-line="44" selection-end-column="112" />
+              <folding>
+                <element signature="e#79#129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Appraiser.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Appraiser.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#93#128#0" expanded="true" />
+                <element signature="e#281#331#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="load.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/socket/load.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1055">
+              <caret line="106" column="43" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>sGet</find>
+      <find>sGet('bu</find>
+      <find>sGet('b</find>
+      <find>sGet('</find>
+      <find>sGet(</find>
+      <find>sGet(['bu</find>
+      <find>sGet(['b</find>
+      <find>sGet(['</find>
+      <find>sGet(['da</find>
+      <find>sGet(['data</find>
+      <find>sGet('data</find>
+      <find>sGet('data,b==</find>
+      <find>sGet('data,b=</find>
+      <find>sGet('data,b</find>
+      <find>sGet('data,</find>
+      <find>sGet('data.</find>
+      <find>sGet('data.b</find>
+      <find>acceptOffer</find>
+      <find>getAppraisers</find>
+      <find>appraisersList</find>
+      <find>id</find>
+      <find>il: sG</find>
+      <find>flipsHistory</find>
+      <find>&lt;appraise</find>
+      <find>setData</find>
+      <find>appraiserChosen</find>
+      <find>LoadingIndicator</find>
+      <find>POST</find>
+      <find>POST(</find>
+      <find>requestId</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>rating</replace>
+      <replace>Rating</replace>
+      <replace>localhost</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\homelend\node_modules\@fortawesome</dir>
+      <dir>C:\‏‏homelendDemo\src\components\Demo\Buyer</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="test" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Text.js" />
+        <option value="$PROJECT_DIR$/src/reducers/form_reducers.js" />
+        <option value="$PROJECT_DIR$/src/pages/InsertDetails/style.css" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Radio.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/ProgressLine.css" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/ProgressLine.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Slider.css" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Slider.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/functions.js" />
+        <option value="$PROJECT_DIR$/src/ajax/put.js" />
+        <option value="$PROJECT_DIR$/src/ajax/get.js" />
+        <option value="$PROJECT_DIR$/src/ajax/common.js" />
+        <option value="$PROJECT_DIR$/src/ajax/post.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/style.css" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/Login/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/Register/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/SubmitBtn.js" />
+        <option value="$PROJECT_DIR$/src/pages/InsertDetails/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Header/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Input.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/Buyer.js" />
+        <option value="$PROJECT_DIR$/src/reducers/properties.js" />
+        <option value="$PROJECT_DIR$/src/reducers/tracker.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/MortgageSmartContract.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi/Fi.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/CreditRankAgency.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/Document.js" />
+        <option value="$PROJECT_DIR$/src/reducers/generalData.js" />
+        <option value="$PROJECT_DIR$/src/data/constants.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
+        <option value="$PROJECT_DIR$/src/actions/getProperties.js" />
+        <option value="$PROJECT_DIR$/src/reducers/mortgage.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Government.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js" />
+        <option value="$PROJECT_DIR$/src/components/Footer/index.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Seller.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Insurance.js" />
+        <option value="$PROJECT_DIR$/src/socket/load.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js" />
+        <option value="$PROJECT_DIR$/src/pages/Home/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Tracker.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="src" pattern="file[homelend]:src/*||file[homelend]:public/*||file[homelend]:src//*||file[homelend]:public//*" />
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Demo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Demo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fi" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Demo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Buyer" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="‏‏homelendDemo" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs8.3/node" />
+    <property name="last_opened_file_path" value="C:/homeland2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="SearchEverywhereHistoryKey" value="trac&#9;FILE&#9;file://C:/‏‏homelendDemo/src/components/Demo/Tracker.js&#10;css&#9;FILE&#9;file://C:/‏‏homelendDemo/src/App.css&#10;tra&#9;FILE&#9;file://C:/‏‏homelendDemo/src/components/Demo/Tracker.js&#10;inpu&#9;FILE&#9;file://C:/‏‏homelendDemo/src/components/Smartforms/Input.js&#10;co&#9;FILE&#9;file://C:/‏‏homelendDemo/src/data/constants.js&#10;reg&#9;null&#9;null&#10;foot&#9;FILE&#9;file://C:/homelend/node_modules/reactstrap/lib/CardFooter.js&#10;login&#9;null&#9;null&#10;con&#9;FILE&#9;file://C:/homelend/src/data/constants.js&#10;pos&#9;FILE&#9;file://C:/homelend/src/ajax/post.js&#10;footer&#9;null&#9;null&#10;in&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/Input.js&#10;i&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/Input.js&#10;foote&#9;FILE&#9;file://C:/homelend/node_modules/reactstrap/lib/CardFooter.js&#10;err&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/ValidationErrors.js&#10;Inp&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/Input.js&#10;val&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/ValidationErrors.js&#10;f&#9;FILE&#9;file://C:/homelend/src/components/Smartforms/functions.js&#10;cons&#9;FILE&#9;file://C:/homelend/src/data/constants.js&#10;loadi&#9;null&#9;null&#10;log&#9;null&#9;null" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\‏‏homelendDemo\src\components\Demo\Buyer" />
+      <recent name="C:\‏‏homelendDemo\src\components\Demo" />
+      <recent name="C:\‏‏homelendDemo\src\reducers" />
+      <recent name="C:\‏‏homelendDemo\public\media\images\properties" />
+      <recent name="C:\homelend\public\media\images\SmartForms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\‏‏homelendDemo\src" />
+      <recent name="C:\‏‏homelendDemo\src\components\Demo\Fi" />
+      <recent name="C:\‏‏homelendDemo\src\components\Demo\Buyer" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ae8c6532-e116-4835-a4ba-a747b5ba86d6" name="Default" comment="" />
+      <created>1513581936634</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1513581936634</updated>
+      <workItem from="1513581938741" duration="58313000" />
+      <workItem from="1514214699810" duration="2817000" />
+      <workItem from="1514294725923" duration="5138000" />
+      <workItem from="1514374869655" duration="6083000" />
+      <workItem from="1514385804160" duration="77582000" />
+      <workItem from="1514819288236" duration="3513000" />
+      <workItem from="1514881663857" duration="326000" />
+      <workItem from="1514882002025" duration="19900000" />
+      <workItem from="1514983152129" duration="1224000" />
+      <workItem from="1515314181763" duration="13236000" />
+      <workItem from="1515398268372" duration="3209000" />
+      <workItem from="1515421900155" duration="814000" />
+      <workItem from="1515428120831" duration="650000" />
+      <workItem from="1515487152401" duration="6276000" />
+      <workItem from="1515569839511" duration="67222000" />
+      <workItem from="1516529939326" duration="797000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1513593320168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513593320168</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added Footer, finished header">
+      <created>1513600537900</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1513600537900</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added basic smartForms functionality">
+      <created>1513609652716</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513609652716</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed basic functionality of smartForms">
+      <created>1513610281853</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513610281853</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Removed all the warnings in the code regarding smartForms">
+      <created>1513610681582</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1513610681582</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed smartForm's error display">
+      <created>1513611367708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1513611367708</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added a printing store in footer">
+      <created>1513612081673</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1513612081673</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Started working on details insertion">
+      <created>1513673921656</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1513673921656</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added design to smartForms">
+      <created>1513677527334</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1513677527334</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added design to smartForms, minor fix">
+      <created>1513677704093</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1513677704093</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed design in Money input, and changed some styles">
+      <created>1513680587061</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1513680587061</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Removed some imports">
+      <created>1513680724518</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1513680724518</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Cards are now responsive">
+      <created>1513681105031</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1513681105031</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added progress bar to smartForms process">
+      <created>1513688774976</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1513688774976</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Fixed background image, added progress line to master">
+      <created>1513689159398</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1513689159398</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed background image, added progress line to master">
+      <created>1513689422997</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1513689422997</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added slider type to smartForms">
+      <created>1513697210831</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1513697210831</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added conditional display to smartForms with an example">
+      <created>1513697863551</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1513697863551</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added type checkbox, designed as material">
+      <created>1513756080077</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1513756080077</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Changed checkbox color to match theme">
+      <created>1513756145823</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1513756145823</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Added ajax functions, examples in the Footer component">
+      <created>1513758868748</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1513758868748</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Added an option to upload Documents using smartForms">
+      <created>1514216920257</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1514216920257</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Initial commit">
+      <created>1514391936030</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1514391936030</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Added seller, buyer progress">
+      <created>1514461051815</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1514461051815</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Working up until credit score">
+      <created>1514476179730</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1514476179730</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fixing Credit Rank agency, now sending to Financial institution">
+      <created>1514710994030</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1514710994030</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Process progress up until government">
+      <created>1514717083741</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1514717083741</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Added government, added Appraiser">
+      <created>1514740342201</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1514740342201</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Finished up to the final smart contract">
+      <created>1514812315645</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1514812315645</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Finished process, need to fill placeholder texts with real data">
+      <created>1514821178193</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1514821178193</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Removed properties reducer, added to data instead, added get properties action">
+      <created>1514893352784</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1514893352784</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Implemented socket, now loading properties for sale from socket in real time">
+      <created>1514971599996</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1514971599996</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added missing commits">
+      <created>1515322127708</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1515322127708</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Added insurance step with offers">
+      <created>1515332427503</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1515332427503</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added an indication when accepting an insurance offer">
+      <created>1515335276900</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1515335276900</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Added numeral library and did number formatting across the demo">
+      <created>1515338123139</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1515338123139</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Filled placeholders with real data from redux's store">
+      <created>1515400064017</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1515400064017</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Small texts changes">
+      <created>1515403877262</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1515403877262</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added an option to change destination url">
+      <created>1515422401882</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1515422401882</updated>
+    </task>
+    <task id="LOCAL-00040" summary="13.93.108.198">
+      <created>1515422603181</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1515422603181</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Testing integration with backend">
+      <created>1515588857432</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1515588857432</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Integrated server communication">
+      <created>1515601200634</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1515601200634</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Works up to calculate rank">
+      <created>1516118857090</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1516118857090</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="267100000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2260128" sideWeight="0.531961" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12459372" sideWeight="0.5063966" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.496208" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2260128" sideWeight="0.468039" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2892741" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17324094" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added type checkbox, designed as material" />
+    <MESSAGE value="Changed checkbox color to match theme" />
+    <MESSAGE value="Added ajax functions, examples in the Footer component" />
+    <MESSAGE value="Added an option to upload Documents using smartForms" />
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Added seller, buyer progress" />
+    <MESSAGE value="Working up until credit score" />
+    <MESSAGE value="Fixing Credit Rank agency, now sending to Financial institution" />
+    <MESSAGE value="Process progress up until government" />
+    <MESSAGE value="Added government, added Appraiser" />
+    <MESSAGE value="Finished up to the final smart contract" />
+    <MESSAGE value="Finished process, need to fill placeholder texts with real data" />
+    <MESSAGE value="Removed properties reducer, added to data instead, added get properties action" />
+    <MESSAGE value="Implemented socket, now loading properties for sale from socket in real time" />
+    <MESSAGE value="Added missing commits" />
+    <MESSAGE value="Added insurance step with offers" />
+    <MESSAGE value="Added an indication when accepting an insurance offer" />
+    <MESSAGE value="Added numeral library and did number formatting across the demo" />
+    <MESSAGE value="Filled placeholders with real data from redux's store" />
+    <MESSAGE value="Small texts changes" />
+    <MESSAGE value="Added an option to change destination url" />
+    <MESSAGE value="13.93.108.198" />
+    <MESSAGE value="Testing integration with backend" />
+    <MESSAGE value="Integrated server communication" />
+    <MESSAGE value="Works up to calculate rank" />
+    <option name="LAST_COMMIT_MESSAGE" value="Works up to calculate rank" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/reducers/form_reducers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="45" column="57" lean-forward="false" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Radio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/InsertDetails/style.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/ProgressLine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Slider.css" />
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/ProgressLine.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="1" lean-forward="true" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Slider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ajax/put.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ajax/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/media/images/smartForms/uploadForeground.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/reactstrap/lib/CardFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Login/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/pages/Register/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/SubmitBtn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/InsertDetails/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Header/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/ajax/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="130" column="24" lean-forward="true" selection-start-line="130" selection-start-column="24" selection-end-line="130" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="72" lean-forward="false" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/Document.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="76" column="25" lean-forward="false" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/generalData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/properties.js" />
+    <entry file="file://$PROJECT_DIR$/src/ajax/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/getProperties.js" />
+    <entry file="file://$PROJECT_DIR$/src/reducers/mortgage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="143" column="71" lean-forward="false" selection-start-line="143" selection-start-column="71" selection-end-line="143" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/MortgageSmartContract.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Government.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/tracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Insurance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/socket/load.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="7" lean-forward="false" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi.js" />
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+          <folding>
+            <element signature="e#95#148#0" expanded="true" />
+            <element signature="e#312#358#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Seller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Tracker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" column="48" lean-forward="false" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="44" column="112" lean-forward="false" selection-start-line="44" selection-start-column="112" selection-end-line="44" selection-end-column="112" />
+          <folding>
+            <element signature="e#79#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Appraiser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#93#128#0" expanded="true" />
+            <element signature="e#281#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="26" column="89" lean-forward="false" selection-start-line="26" selection-start-column="89" selection-end-line="26" selection-end-column="89" />
+          <folding>
+            <element signature="e#95#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1055">
+          <caret line="106" column="43" lean-forward="false" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>src</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="src" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

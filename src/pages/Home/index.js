@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import { Row } from 'reactstrap';
 import Seller from '../../components/Demo/Seller';
 import Buyer from '../../components/Demo/Buyer/';
-import Fi from '../../components/Demo/Fi/';
+import Fi from '../../components/Demo/Fi';
 import Government from '../../components/Demo/Government';
 import Appraiser from '../../components/Demo/Appraiser';
 import CreditRatingAgency from '../../components/Demo/CreditRatingAgency';

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { map } from 'lodash';
 import { sGet } from '../../data/constants';
 
-export default class Seller extends Component {
+export default class Tracker extends Component {
   render() {
     let tracker = {...sGet('tracker')};
 

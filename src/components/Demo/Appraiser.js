@@ -1,67 +1,92 @@
 import React, { Component } from 'react';
 import Form from '../../components/Smartforms';
+import POST from '../../ajax/post';
+import GET from '../../ajax/get';
 import { getFormData } from '../../components/Smartforms/functions';
 import { sGet } from '../../data/constants';
-import { isEmpty, map, reduce, get } from 'lodash';
+import { map, isEmpty } from 'lodash';
 import { addTrack } from '../../reducers/tracker';
 import { appraiserEvaluation } from '../../reducers/mortgage';
 import numeral from 'numeral';
+import LoadingIndicator from '../../components/common/LoadingIndicator';
+import { setData } from '../../reducers/generalData';
 
 
-const propertyWorth = {
+const insFromData = {
   fields: [
-    {name: 'worth', default: 0,type: 'number', label: 'Property overall worth'},
+    { name: 'worth', default: 0, type: 'number', label: 'Property overall worth' },
   ]
 }
-
-export default class Government extends Component {
+export default class Appraiser extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+    this.email = "abu@afash.dala";
 
-    this.approveCondition = (mortgageId) => () => {
-      const val = getFormData('worth')
-      appraiserEvaluation(mortgageId, val.worth);
-      addTrack({ type: `Appraiser evaluated property`, data: {mortgageId, value: val.worth} })
+    this.state.loading = false;
+    this.fetchData = () => {
+      if (this.state.loading) return;
+      this.setState({ loading: true });
+
+
+      GET(`${'http://localhost:3000'}/api/v1/appraiser/pendingRequests?email=${this.email}`, (r, s) => {
+        console.log(r, s);
+        this.setState({ appraisalData: r });
+        this.setState({ loading: false });
+      });
+    }
+
+    this.approveCondition = (buyerHash, requestHash) => () => {
+      const formData = getFormData('worth_' + requestHash)
+
+      this.setState({ loading: true });
+      POST(`http://localhost:3000/api/v1/appraiser/estimation`, {
+        email: this.email,
+        buyerHash: buyerHash,
+        requestHash: requestHash,
+        amount: formData.worth,
+      }, (r, s) => {
+        if (s !== 200) { this.setState({ loading: false }); return alert("Oops, status " + s); }
+
+        appraiserEvaluation(requestHash, formData.worth);
+        addTrack({ type: `Appraiser evaluated property`, data: { mortgageId: requestHash, value: formData.worth } })
+        this.setState({ loading: false });
+        this.setState({ appraisalData: null });
+        setData({ UiState: 'insurancePutOffer' });
+      });
     }
 
   }
   render() {
-    let pendingForApproval = {...sGet('mortgage')};
+    if (this.state.loading) return <LoadingIndicator />
+    
+    if (sGet('data.UiState') !== 'appraiserAppraisalWaiting') return null;
 
-    pendingForApproval = reduce(pendingForApproval, (result, row, key) => {
-      if(row.STATUS === 'waitingForApprovals') {
-        // Check if appraiser is chosen
-        if(get(row, ['appraiser']))
-          result[key] = row;
-      }
-      return result
-    }, {})
+    const { appraisalData, loading } = this.state;
 
-    if( isEmpty(pendingForApproval)) return null;
+
+    let pendingForApproval = [];
+    if (appraisalData == null) this.fetchData();
 
     return (
       <div>
         {
-          map(pendingForApproval, (v, mortgageId) => {
-            const mortgage = sGet(['mortgage', mortgageId]);
-            const property = sGet(['data', 'properties', mortgage['propertyId']])
-
-            const evaluation = get(v, ['appraiser', 'value']) || false;
-
-            if(evaluation) return <div key={mortgageId}><strong>Request {mortgageId} is evaluated!</strong></div>;
+          map(appraisalData, (v, index) => {
+            const buyerHash = v.BuyerHash
+            const requestHash = v.RequestHash
+            const property = v.PropertyItem;
+            const mortgageId = requestHash;
+            const formName = 'worth_' + requestHash;
+            let val = sGet(['forms', formName, 'worth']);
             return (
-              <div key={mortgageId} style={{textAlign: 'justify'}}>
-                Mortgage id {mortgageId} is ready for inspection:
-                <div style={{margin: '10px'}}><strong>Address: </strong>{property['address']}</div>
-                  {evaluation ? null :
-                    <div>
-                      <Form data={propertyWorth} name="worth" />
-                      {sGet(['forms', 'worth', 'worth']) >= parseInt(property.price, 10) ?
-                        <div onClick={this.approveCondition(mortgageId, "approve3")} className={`btn btn-primary w-100 mt-2 ${sGet(['forms', 'worth', 'worth']) < 100 ? 'disabled' : ''}`}>The property is worth at least {numeral(property['price']).format()} amount</div>:
-                        <div className="btn btn-danger w-100 mt-2" style={{border: 'none'}} onClick={() => alert("This will terminate the contract!")}>The property is worth less than {numeral(property['price']).format()}</div>
-                      }
-                    </div>
+              <div key={formName + " 5"} style={{ textAlign: 'justify' }}>
+                <div>
+                  <Form data={insFromData} name={formName} />
+                  {val >= parseInt(property.SellingPrice, 10) ?
+                    <div onClick={this.approveCondition(buyerHash, requestHash)} className={`btn btn-primary w-100 mt-2 ${val < 100 ? 'disabled' : ''}`}>Current selling price {numeral(property['SellingPrice']).format()} amount</div> :
+                    <div className="btn btn-danger w-100 mt-2" style={{ border: 'none' }} onClick={this.approveCondition(buyerHash, requestHash)}>Current selling price {numeral(property['SellingPrice']).format()}</div>
                   }
+                </div>
               </div>
             )
           })

@@ -18,7 +18,7 @@ export const store = applyMiddleware(promiseMiddleware())(createStore)(reducers)
 
 export const sGet = (p = null) => !p ? store.getState() : get(store.getState(), p);
 
-export const simulateDelay = async (stallTime = 600) => await new Promise(resolve => setTimeout(resolve, stallTime));
+export const simulateDelay = async (stallTime = 5) => await new Promise(resolve => setTimeout(resolve, stallTime));
 
 export const STORAGE_URL = "changeME!!!";
 
