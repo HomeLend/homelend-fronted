@@ -23,7 +23,7 @@ export default class ViewMyInfo extends Component {
                 return;
 
             this.setState({ loading: true });
-            GET(`http://localhost:3000/api/v1/${type}/properties?email=${email}`, (r, s) => {
+            GET(`${type}/properties?email=${email}`, (r, s) => {
                 this.setState({ loading: false, myInfo: s === 200 ? r : false });
             })
         }

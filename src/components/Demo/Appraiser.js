@@ -29,7 +29,7 @@ export default class Appraiser extends Component {
       this.setState({ loading: true });
 
 
-      GET(`${'http://localhost:3000'}/api/v1/appraiser/pendingRequests?email=${this.email}`, (r, s) => {
+      GET(`appraiser/pendingRequests?email=${this.email}`, (r, s) => {
         console.log(r, s);
         this.setState({ appraisalData: r });
         this.setState({ loading: false });
@@ -40,7 +40,7 @@ export default class Appraiser extends Component {
       const formData = getFormData('worth_' + requestHash)
 
       this.setState({ loading: true });
-      POST(`http://localhost:3000/api/v1/appraiser/estimation`, {
+      POST(`appraiser/estimation`, {
         email: this.email,
         buyerHash: buyerHash,
         requestHash: requestHash,

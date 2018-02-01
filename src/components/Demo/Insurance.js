@@ -32,7 +32,7 @@ export default class Insurance extends Component {
 
     this.state.pendingOffers = null;
     this.pullData = () => {
-      GET(`http://10.0.0.31:3000/api/v1/insurance/pull?licenceNumber=${insuranceLicenceNumber}`, (r, s) => {
+      GET(`insurance/pull?licenceNumber=${insuranceLicenceNumber}`, (r, s) => {
         console.log(r, s);
 
         this.setState({ pendingOffers: r });
@@ -44,7 +44,7 @@ export default class Insurance extends Component {
       const formData = getFormData(mortgage);
       const amount = formData.monthlyInsuranceAmount;
 
-      POST(`http://localhost:3000/api/v1/insurance/putOffer`, {
+      POST(`insurance/putOffer`, {
         userHash: buyerHash,
         requestHash: mortgage,
         amount: amount,

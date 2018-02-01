@@ -36,7 +36,7 @@ export default class Seller extends Component {
       this.setState({ view: 'loading' })
       await simulateDelay(); // for development
       const formData = getFormData("sell");
-      POST(`${'http://localhost:3000'}/api/v1/seller/advertise`, formData, (r, s) => {
+      POST(`seller/advertise`, formData, (r, s) => {
         localStorage.setItem('sellerEmail', formData.email);
         console.log(r, s);
         addTrack({ type: 'New property', data: formData });

@@ -23,7 +23,7 @@ export default class Fi extends Component {
       setData({ fiPullData: false });
 
 
-      POST(`${'http://localhost:3000'}/api/v1/bank/pendingForOffer`, { buyerHash: sGet('data.buyerHash') },
+      POST(`bank/pendingForOffer`, { buyerHash: sGet('data.buyerHash') },
         (r, s) => this.setState({ data: (s === 200) ? r : false, loading: false }))
     }
 
@@ -32,15 +32,10 @@ export default class Fi extends Component {
       this.setState({ loading: true });
       setData({reloadBankSmartContract : false});
 
-      GET(`${'http://localhost:3000'}/api/v1/bank/pendingForFinalApproval?swiftNumber=123`,
+      GET(`bank/pendingForFinalApproval?swiftNumber=123`,
         (r, s) => {
           this.setState({ pending4approval: r, loading: false });
         });
-
-      // GET(`${'http://localhost:3000'}/api/v1/bank/pendingForChainCodeExecute?swiftNumber=123`,
-      //   (r, s) => {
-      //     this.setState({ pending4RunChaincode: r, loading: false });
-      //   });
     }
 
     this.sendMortgageProposal = () => {
@@ -48,7 +43,7 @@ export default class Fi extends Component {
 
       this.setState({ calculating: true, loading: true })
 
-      POST(`${'http://localhost:3000'}/api/v1/bank/calculate`, {
+      POST(`bank/calculate`, {
         name: 'Bank test',
         swiftNumber: '123',
         interest: Math.floor(Math.random() * 10).toFixed(2),

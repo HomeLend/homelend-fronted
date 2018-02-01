@@ -6,8 +6,11 @@ import { Route } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import './App.css';
+import config from 'react-global-configuration';
 
 fontawesome.library.add(faPencilAlt)
+config.set({ serverBaseUrl: 'http://52.166.114.14:3000/api/v1/' });
+
 
 class App extends Component {
   render() {

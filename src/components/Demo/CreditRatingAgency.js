@@ -17,14 +17,14 @@ export default class CreditRatingAgency extends Component {
 			if (this.state.loading) return;
 			this.setState({loading: true})
 
-			POST(`${'http://localhost:3000'}/api/v1/creditscore/pull`, {buyerHash: sGet('data.buyerHash')},
+			POST(`creditscore/pull`, {buyerHash: sGet('data.buyerHash')},
         (r, s) => this.setState({data: (s === 200) ? r : false, loading: false}) )
 		}
 
 		this.calculateRating = (requestHash) => () => {
 			this.setState({calculating: true})
 
-			POST(`${'http://localhost:3000'}/api/v1/creditscore/calculate`, {
+			POST(`creditscore/calculate`, {
 				licenseNumber: '125',
 				name: 'DummyCreditRankAgency',
 				userHash: sGet('data.buyerHash'),

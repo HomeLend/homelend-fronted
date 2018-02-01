@@ -46,7 +46,7 @@ export default class Government extends Component {
 
       this.setState({ loading: true });
 
-      POST('http://10.0.0.31:3000/api/v1/government/updateRequest', postData, (r, s) => {
+      POST('government/updateRequest', postData, (r, s) => {
         this.setState({ loading: false });
 
         if (s !== 200) {
@@ -66,7 +66,7 @@ export default class Government extends Component {
     this.pullData = () => {
       setData({ governmentPullData: 'false' });
 
-      GET(`http://10.0.0.31:3000/api/v1/government/pending`, (r, s) => {
+      GET(`government/pending`, (r, s) => {
         console.log(r, s);
         this.setState({ govData: r });
       });

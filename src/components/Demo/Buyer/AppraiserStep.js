@@ -19,7 +19,7 @@ export default class AppraiserStep extends Component {
 
       this.setState({ loading: true });
 
-      POST(`${'http://localhost:3000'}/api/v1/buyer/selectAppraiser`, {
+      POST(`buyer/selectAppraiser`, {
 				email: sGet('data.buyerEmail'),
 				appraiserHash,
         requestHash

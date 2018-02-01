@@ -55,7 +55,7 @@ export default class Buyer extends Component {
 
       this.setState({ loading: true })
       const registerDetails = getFormData('buyerRegister');
-      POST(`http://localhost:3000/api/v1/buyer/buy`, {
+      POST(`buyer/buy`, {
         email: registerDetails.email,
         idNumber: registerDetails.idnumber,
         fullName: registerDetails.fullName,
@@ -82,7 +82,7 @@ export default class Buyer extends Component {
       this.setState({ loading: true });
       setData({ currentRequestId: requestHash });
 
-      POST(`${'http://localhost:3000'}/api/v1/buyer/selectBankOffer`, {
+      POST(`buyer/selectBankOffer`, {
         email: sGet('data.buyerEmail'),
         requestHash,
         selectedBankOfferHash,
@@ -100,7 +100,7 @@ export default class Buyer extends Component {
 
     this.acceptInsuranceOffer = (requestHash, insuraceOfferHash) => () => {
       this.setState({ loading: true });
-      POST(`http://localhost:3000/api/v1/buyer/selectInsuranceOffer`, {
+      POST(`buyer/selectInsuranceOffer`, {
         insuranceOfferHash: insuraceOfferHash,
         email: sGet('data.buyerEmail'),
         requestHash: requestHash
@@ -121,7 +121,7 @@ export default class Buyer extends Component {
         return;
       this.setState({ loading: true });
 
-      GET(`http://localhost:3000/api/v1/buyer/myRequests?email=${sGet('data.buyerEmail')}`, (r, s) => {
+      GET(`buyer/myRequests?email=${sGet('data.buyerEmail')}`, (r, s) => {
         this.setState({ loading: false, mortgageOffers: s === 200 ? r : false });
       })
     }
@@ -134,7 +134,7 @@ export default class Buyer extends Component {
       setData({ loadProperties4Sale : false });
 
       this.setState({ loading: true });
-      GET(`http://localhost:3000/api/v1/buyer/properties4Sale`, (r, s) => {
+      GET(`buyer/properties4Sale`, (r, s) => {
         this.setState({ loading: false, shouldLoadProperties: false, properties: s === 200 ? r : false });
       })
     }
@@ -148,7 +148,7 @@ export default class Buyer extends Component {
 
     this.loadAppraisers = () => {
       this.setState({ loading: true });
-      GET(`http://localhost:3000/api/v1/buyer/appraisers`, (r, s) => {
+      GET(`buyer/appraisers`, (r, s) => {
         this.setState({ loading: false, appraisersList: s === 200 ? r : false });
       })
     }
