@@ -36,10 +36,19 @@ export default class Insurance extends Component {
 
     this.state.pendingOffers = null;
     this.pullData = () => {
-      GET(`insurance/pull?licenceNumber=${insuranceLicenceNumber}`, (r, s) => {
+      GET(`insurance/pull?licenseNumber=${insuranceLicenceNumber}`, (r, s) => {
         console.log(r, s);
+        if (s !== 200) {
+          this.setState({ loading: false });
+          return alert("Oops, status " + s);
+        }
 
-        this.setState({ pendingOffers: r });
+        this.setState({ loading: false });
+        if(r != null && r.length > 0)
+        {
+          let lastRequest = r[r.length - 1]
+          this.setState({ pendingOffers: [lastRequest] });
+        }
       });
     }
 

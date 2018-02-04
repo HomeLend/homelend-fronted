@@ -32,9 +32,18 @@ export default class Fi extends Component {
       this.setState({ loading: true });
       setData({reloadBankSmartContract : false});
 
-      GET(`bank/pendingForFinalApproval?swiftNumber=123`,
+      GET(`bank/pendingForFinalApproval?swiftNumber=12345`,
         (r, s) => {
-          this.setState({ pending4approval: r, loading: false });
+          console.log(r, s);
+          this.setState({ loading: false });
+          if (s !== 200) {
+            return alert("Oops, status " + s);
+          }
+          if(r != null && r.length > 0)
+          {
+            let lastRequest = r[r.length - 1]
+            this.setState({ pending4approval: [lastRequest] });
+          }
         });
     }
 
@@ -45,7 +54,7 @@ export default class Fi extends Component {
 
       POST(`bank/calculate`, {
         name: 'Bank test',
-        swiftNumber: '123',
+        swiftNumber: '12345',
         interest: Math.floor(Math.random() * 10).toFixed(2),
         requestHash: this.state.data.Hash,
         userHash: sGet('data.buyerHash'),

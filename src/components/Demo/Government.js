@@ -58,7 +58,7 @@ export default class Government extends Component {
         setApproveCondition(mortgageHash, approveString);
         setData({ UiState: 'GovernmentSettedOffer' });
         this.pullData();
-        
+
         addTrack({ type: `Government approved ${approveString}`, data: { mortgageHash } });
       });
     }
@@ -68,7 +68,19 @@ export default class Government extends Component {
 
       GET(`government/pending`, (r, s) => {
         console.log(r, s);
-        this.setState({ govData: r });
+        if (s !== 200) {
+          this.setState({ loading: false });
+          return alert("Oops, status " + s);
+        }
+
+        this.setState({ loading: false });
+        if (r != null && r.length > 0) {
+          let lastRequest = r[r.length - 1]
+          this.setState({ govData: [lastRequest] });
+        }
+        else
+          this.setState({ govData: [] });
+
       });
     }
   }

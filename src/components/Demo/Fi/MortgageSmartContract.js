@@ -30,7 +30,7 @@ export default class MortgageSmartContract extends Component {
     this.createNewContract = (buyerHash, hash) => () => {
       this.setState({ loading: true });
 
-      POST(`bank/runChaincode`, { userHash: buyerHash, requestHash: hash, swiftNumber: 123 }, (r, s) => {
+      POST(`bank/runChaincode`, { userHash: buyerHash, requestHash: hash, swiftNumber: 12345 }, (r, s) => {
         this.setState({ loading: false });
         if (s !== 200) {
           return alert("Oops, status " + s);
@@ -45,7 +45,7 @@ export default class MortgageSmartContract extends Component {
     this.approveLoan = (buyerHash, hash) => () => {
       this.setState({ loading: true });
 
-      POST(`bank/approve`, { userHash: buyerHash, requestHash: hash, swiftNumber: 123 }, (r, s) => {
+      POST(`bank/approve`, { userHash: buyerHash, requestHash: hash, swiftNumber: 12345 }, (r, s) => {
         this.setState({ loading: false });
         if (s !== 200) {
           return alert("Oops, status " + s);
