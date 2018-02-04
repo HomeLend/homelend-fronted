@@ -31,8 +31,17 @@ export default class Appraiser extends Component {
 
       GET(`appraiser/pendingRequests?email=${this.email}`, (r, s) => {
         console.log(r, s);
-        this.setState({ appraisalData: r });
+        if (s !== 200) {
+          this.setState({ loading: false });
+          return alert("Oops, status " + s);
+        }
+
         this.setState({ loading: false });
+        if(r != null && r.length > 0)
+        {
+          let lastRequest = r[r.length - 1]
+          this.setState({ appraisalData: [lastRequest] });
+        }
       });
     }
 

@@ -9,7 +9,8 @@ import './App.css';
 import config from 'react-global-configuration';
 
 fontawesome.library.add(faPencilAlt)
-config.set({ serverBaseUrl: 'http://52.166.114.14:3000/api/v1/' });
+config.set({ serverBaseUrl: 'http://localhost:3000/api/v1/' });
+//config.set({ serverBaseUrl: 'http://demo.homelend.io:3000/api/v1/' });
 
 
 class App extends Component {
