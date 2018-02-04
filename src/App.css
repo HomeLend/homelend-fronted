@@ -13,6 +13,7 @@ h3 {
 .btn.btn-primary {
     background: #4BCBD9;
     border: none;
+    font-weight: bold;
     transition: .05s all ease;
 }
 .btn.btn-primary:hover {
@@ -22,4 +23,9 @@ h3 {
 .btn.btn-primary:active {
     background: #4bcbd8 !important;
     transform: scale(1.1);
+}
+label.form-control-label {
+    margin-bottom: 3px;
+    color: #4CD;
+    text-align: initial;
 }

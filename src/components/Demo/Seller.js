@@ -63,7 +63,7 @@ export default class Seller extends Component {
     }
     
     return (
-      <div>
+      <div style={{minHeight: 'calc(100% - 80px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         {
           view === 'main' && myInfo != null &&
           <div>
@@ -74,7 +74,7 @@ export default class Seller extends Component {
         }
         {
           view === 'main' &&
-          <div>
+          <div >
             <div className="btn btn-primary" onClick={() => this.setState({ view: 'post' })}>Post a new property</div>
           </div>
         }
@@ -82,7 +82,10 @@ export default class Seller extends Component {
           view === 'post' &&
           <div>
             <Form data={sellerInputs} name="sell" />
-            <div className="btn btn-primary" onClick={this.addProperty()}>Post a new property</div>
+            <div className="d-flex justify-content-around flex-row">
+              <div className="btn btn-primary" onClick={this.addProperty()}>Post</div>
+              <div className="btn btn-danger" onClick={() => this.setState({ view: 'main' })}>Cancel</div>
+            </div>
           </div>
         }
         {

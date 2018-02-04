@@ -117,7 +117,7 @@ export default class Buyer extends Component {
     }
 
     this.loadMyRequests = () => {
-      if (this.state.loading == true)
+      if (this.state.loading === true)
         return;
       this.setState({ loading: true });
 
@@ -127,7 +127,7 @@ export default class Buyer extends Component {
     }
 
     this.loadProperties4Sale = () => {
-      if (this.state.loading == true)
+      if (this.state.loading === true)
         return;
 
       this.state.shouldLoadProperties = false;
@@ -140,7 +140,7 @@ export default class Buyer extends Component {
     }
 
     this.insuranceLoadMyRequests = () => {
-      if (sGet('data.insuranceLoadMyRequests') != true) {
+      if (sGet('data.insuranceLoadMyRequests') !== true) {
         setData({ insuranceLoadMyRequests: true });
         this.loadMyRequests();
       }
@@ -173,8 +173,8 @@ export default class Buyer extends Component {
 
     const buyerEmail = sGet('data.buyerEmail');
 
-    const buyerHash = sGet('data.buyerHash')
-    if (shouldLoadProperties == undefined || shouldLoadProperties === true || sGet('data.loadProperties4Sale') == true) {
+    // const buyerHash = sGet('data.buyerHash')
+    if (shouldLoadProperties === undefined || shouldLoadProperties === true || sGet('data.loadProperties4Sale') === true) {
       this.loadProperties4Sale();
     }
 
@@ -189,11 +189,11 @@ export default class Buyer extends Component {
     let selectedRequest = {};
     const uiState = sGet('data.UiState');
 
-    if (uiState == "buyerGotInsuranceOffers" || uiState == "buyerGotOffers") {
+    if (uiState === "buyerGotInsuranceOffers" || uiState === "buyerGotOffers") {
       mortgageOffers = mortgageOffers || this.loadMyRequests();
     }
 
-    if(uiState == "ViewMyInfo" && buyerEmail != null) return <ViewMyInfo type='buyer' email={buyerEmail} />;
+    if(uiState === "ViewMyInfo" && buyerEmail !== null) return <ViewMyInfo type='buyer' email={buyerEmail} />;
     
 
     if (uiState === 'buyerGotInsuranceOffers') {
@@ -201,11 +201,12 @@ export default class Buyer extends Component {
       currentScreen = 'insurance';
       mortgageOffers = filter(mortgageOffers, { Status: 'INSURANCE_OFFER_PROVIDED' })
 
-      selectedRequest = (mortgageOffers != null && mortgageOffers.length > 0) && mortgageOffers[mortgageOffers.length - 1];
+      selectedRequest = (mortgageOffers !== null && mortgageOffers.length > 0) && mortgageOffers[mortgageOffers.length - 1];
     }
-    else if (uiState == 'appraiserAppraisalWaiting') {
+    else if (uiState === 'appraiserAppraisalWaiting') {
       currentScreen = '';
     }
+
 
     if (loading) return <LoadingIndicator />;
 

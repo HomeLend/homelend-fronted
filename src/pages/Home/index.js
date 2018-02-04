@@ -11,7 +11,7 @@ import Tracker from '../../components/Demo/Tracker';
 // import LoadingIndicator from '../../components/common/LoadingIndicator';
 
 const Card = ({title, style, component}) => (
-  <div style={{background: '#fcfcfc', boxShadow: 'rgba(0,0,0,0.2) 1px 1px 3px 1px', margin: '15px', textAlign: 'center', height: 'calc(100% - 30px)', padding: '10px', overflow: "auto", ...style}}>
+  <div style={{background: '#fcfcfc', boxShadow: 'rgba(0,0,0,0.2) 1px 1px 3px 1px', margin: '15px', textAlign: 'center', height: 'calc(100% - 30px)', padding: '10px', overflow: "auto", position: 'relative', ...style}}>
     <h3 style={{color: 'rgba(100,100,100,0.7)'}}>{title}</h3>
     {component}
   </div>

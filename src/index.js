@@ -7,13 +7,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import io from 'socket.io-client';
-//import socketEventsLoad from './socket/load';
-
-// export const socket = io('localhost:3000', {
-//   path: '/sock'
-// });
-// socketEventsLoad(socket)
 
 function mapStateToProps(state) {
   return {

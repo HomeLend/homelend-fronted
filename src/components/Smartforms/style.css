@@ -1,26 +1,40 @@
 @import '../../../node_modules/react-datetime/css/react-datetime.css';
 @import '../../../node_modules/react-select/dist/react-select.min.css';
 @import '../../../node_modules/rc-slider/assets/index.css';
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(20px);}
+    to   { opacity: 1; transform: translateY(0);    }
+}
 input {
-    border: 1px solid #ccc;
+    border: 1px solid #eaeaea;
     border-radius: 3px;
     background: white;
     box-shadow: none;
     margin-top: 3px;
     height: 40px;
     padding: 6px;
+    transition: .3s all ease;
+    animation: fadein .3s;
+}
+input:focus {
+    border: 1px solid #ccc;
 }
 label {
     font-weight: 600;
+    animation: fadein .5s ease;
 }
-.form-group {
+div.form-group {
     display: flex;
     flex-direction: column;
+    margin-bottom: .5em;
 }
 input[type="radio"] {
     position: absolute;
     opacity: 0;
     pointer-events: none;
+}
+.spinner {
+    animation: fadein .5s;
 }
 .radio.btn {
     border-radius: 3px;
@@ -29,7 +43,7 @@ input[type="radio"] {
     border: 1px solid #ccc;
     background: white;
     color: gray;
-    transition: all .2s ease-in-out;
+    transition: all .3s ease-in-out;
     padding: .5rem 1rem;
     display: inline-block;
     line-height: 1.25;
@@ -76,6 +90,7 @@ input[type='radio']:focus + label.btn {
 }
 .btn {
     cursor: pointer;
+    animation: fadein .2s;
 }
 .rc-slider-step {
     height: 10px;
