@@ -8,7 +8,7 @@ import { isEmpty, map, reduce } from 'lodash';
 import POST from '../../../ajax/post';
 import GET from '../../../ajax/get';
 import MortgageSmartContract from './MortgageSmartContract';
-// import numeral from 'numeral';
+import numeral from 'numeral';
 import LoadingIndicator from '../../../components/common/LoadingIndicator';
 
 
@@ -82,12 +82,15 @@ export default class Fi extends Component {
           {/* <div onClick={this.pull}>PULL</div> */}
           {this.state.data && (
             <div>
-              <div className="d-flex flex-column align-items-start justify-content-start">
-                <div><span>Buyer:</span><span>{this.state.data.BuyerHash}</span></div>
-                <div><span>Credit score:</span><span>{this.state.data.CreditScore}</span></div>
-                <div><span>Loan amount:</span><span>{this.state.data.LoanAmount}</span></div>
+              <strong style={{margin: '10px 0'}}>A new mortgage request is waiting for an offer</strong>
+              <div className="d-flex flex-column align-items-start justify-content-start" style={{background: '#eee', borderRadius: '3px', padding: '15px'}}>
+                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Buyer: </span><input style={{border: 'none', maxWidth: '300px', background: 'transparent'}} readOnly value={this.state.data.BuyerHash} /></div>
+                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Credit score: </span><span>{this.state.data.CreditScore}</span></div>
+                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Loan amount: </span><span>{numeral(this.state.data.LoanAmount).format()}</span></div>
+                <div className="w-100 d-flex flex-row justify-content-center">
+                  <div className="btn btn-primary" style={{maxWidth: '350px'}} onClick={this.sendMortgageProposal}>Serve offer</div>
+                </div>                  
               </div>
-              <div className="btn btn-primary" onClick={this.sendMortgageProposal}>Serve offer</div>
             </div>
           )}
         </div>

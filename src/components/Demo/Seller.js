@@ -63,28 +63,28 @@ export default class Seller extends Component {
     }
     
     return (
-      <div style={{minHeight: 'calc(100% - 80px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        {
-          view === 'main' && myInfo != null &&
-          <div>
-            Hey, {myInfo.fullName}<br />
-            <ViewMyInfo type='seller' email={myInfo.email} key={myInfoKey} />
-            <div className="btn btn-danger" onClick={this.logout()}>Logout</div>            
-          </div>
-        }
-        {
-          view === 'main' &&
-          <div >
-            <div className="btn btn-primary" onClick={() => this.setState({ view: 'post' })}>Post a new property</div>
-          </div>
+      <div style={{minHeight: 'calc(100% - 80px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%'}}>
+        { view === 'main' && 
+            <div className="w-100">
+              {myInfo &&
+              <div className='w-100'>
+                <div style={{textAlign: 'right', width: '100%', margin: '10px 0'}}>Hey, {myInfo.fullName}</div>
+                <ViewMyInfo type='seller' email={myInfo.email} key={myInfoKey} />            
+              </div>
+              }
+              <div className="d-flex justify-content-around flex-row mt-4 w-100">
+                {myInfo && <div className="btn btn-danger" onClick={this.logout()}>Logout</div>}
+                <div className="btn btn-primary" onClick={() => this.setState({ view: 'post' })}>Post a new property</div>                
+              </div>
+            </div>
         }
         {
           view === 'post' &&
           <div>
             <Form data={sellerInputs} name="sell" />
             <div className="d-flex justify-content-around flex-row">
-              <div className="btn btn-primary" onClick={this.addProperty()}>Post</div>
               <div className="btn btn-danger" onClick={() => this.setState({ view: 'main' })}>Cancel</div>
+              <div className="btn btn-primary" onClick={this.addProperty()}>Post</div>
             </div>
           </div>
         }
@@ -92,7 +92,7 @@ export default class Seller extends Component {
           view === 'loading' &&
           <div>
             <h3>Posting</h3>
-            <div className="w-100">
+            <div className="w-100 mt-2 mb-2">
               <LoadingIndicator />
             </div>
           </div>

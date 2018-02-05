@@ -49,14 +49,16 @@ export default class CreditRatingAgency extends Component {
 
     return (
       <div>
-        <div onClick={this.fetchData}>FETCH</div>
-        <div className="d-flex flex-column align-items-start text-justify">
-          <div><span style={{width: '100px', display: 'inline-block'}}>Loan amount: </span><span>{numeral(data.LoanAmount).format()}</span></div>
-          <div><span style={{width: '100px', display: 'inline-block'}}>Time: </span><span>{data.Timestamp}</span></div>
+				<strong>New loan request received</strong>
+        <div className="d-flex flex-column align-items-start text-justify mt-2" style={{padding: '15px', background: '#eee', borderRadius: '3px'}}>
+          <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{width: '150px', display: 'inline-block'}}>Loan amount: </span><span>{numeral(data.LoanAmount).format()}</span></div>
+          <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{width: '150px', display: 'inline-block'}}>Buyer salary: </span><span>{numeral(data.Salary).format()}</span></div>
+					{ calculating ? <LoadingIndicator/> :
+						<div className="w-100 d-flex flex-row justify-content-center">
+							<div style={{marginTop: '1em', maxWidth: '350px'}} onClick={this.calculateRating(data.Hash)} className="btn btn-primary">Calculate credit rating</div>
+						</div>
+					}
         </div>
-				{ calculating ? <LoadingIndicator/> :
-          <div style={{marginTop: '1em'}} onClick={this.calculateRating(data.Hash)} className="btn btn-primary">Calculate rating</div>
-				}
       </div>
     )
   }

@@ -215,7 +215,7 @@ export default class Buyer extends Component {
 
     return (
       <div>
-        <Container>
+        <Container style={{marginTop: '10px'}}>
           {
             currentScreen === "browseProperties" &&
             map(properties, (v, k) =>
@@ -231,18 +231,24 @@ export default class Buyer extends Component {
         {
           currentScreen === "buyerRegister" &&
           <div>
-            Property: {this.state.propertyChosen}
+            <div><strong>Please state who you are</strong></div>
+            <div style={{margin: '10px 0'}} className='w-100 text-left text-muted'>Property hash to buy: {this.state.propertyChosen}</div>
             <Form data={register} name="buyerRegister" />
-            <div className="btn btn-secondary" style={{ margin: '5px' }} onClick={() => this.setState({ currentScreen: 'browseProperties', propertyChosen: false })}>Cancel</div>
-            <div className="btn btn-primary" style={{ margin: '5px' }} onClick={this.register}>Register</div>
+            <div className='w-100 d-flex flex-row justify-content-around'>
+              <div className="btn btn-danger" style={{ margin: '5px' }} onClick={() => this.setState({ currentScreen: 'browseProperties', propertyChosen: false })}>Cancel</div>
+              <div className="btn btn-primary" style={{ margin: '5px' }} onClick={this.register}>Register</div>
+            </div>
           </div>
         }
         {
           currentScreen === "requestMortgage" &&
           <div>
+            <div style={{margin: '10px 0'}}><strong>Fill the following details to request a mortgage</strong></div>            
             <Form data={buyerRequestMortgage} name="requestMortgage" />
-            <div className="btn btn-secondary" style={{ margin: '5px' }} onClick={() => this.setState({ currentScreen: 'buyerRegister' })}>Prev</div>
-            <div className="btn btn-primary" style={{ margin: '5px' }} onClick={this.requestMortgage}>Request mortgage</div>
+            <div className='w-100 d-flex flex-row justify-content-around'>
+              <div className="btn btn-danger" style={{ margin: '5px' }} onClick={() => this.setState({ currentScreen: 'buyerRegister' })}>Prev</div>
+              <div className="btn btn-primary" style={{ margin: '5px' }} onClick={this.requestMortgage}>Request mortgage</div>
+            </div>
           </div>
         }
         {

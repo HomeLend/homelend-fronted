@@ -28,6 +28,13 @@ div.form-group {
     flex-direction: column;
     margin-bottom: .5em;
 }
+.trackerRow {
+    background: gray;
+    color: white;
+    padding: 10px;
+    overflow: auto;
+    animation: fadein .5s ease;    
+}
 input[type="radio"] {
     position: absolute;
     opacity: 0;

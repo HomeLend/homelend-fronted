@@ -41,17 +41,23 @@ export default class ViewMyInfo extends Component {
                 {
                     myInfo != null &&
                     <div>
-                        <div> <strong>My info: </strong> Balance : {myInfo.Balance} </div>
-                        <div className="mt-4 d-flex flex-column align-items-center">
+                        <div style={{textAlign: 'initial', background: '#eee', padding: '15px'}}><strong>Balance:</strong> {myInfo.Balance} </div>
+                        <Container className="mt-4 align-items-center">
+                            <Row style={{marginBottom: '30px'}}>
+                                <Col xs='3'><strong>Hash</strong></Col>
+                                <Col xs='3'><strong>Address</strong></Col>
+                                <Col xs='3'><strong>Price</strong></Col>
+                                <Col xs='3'><strong>Photo</strong></Col>
+                            </Row>
                             {map(myInfo.Properties, (v, k) =>
-                                <Row key={k} style={{ marginBottom: '20px' }}>
-                                    <Col>{v.Hash}</Col>
-                                    <Col>{v.Address}</Col>
-                                    <Col>{numeral(v.SellingPrice).format()}</Col>
-                                    <Col style={{ maxWidth: '75px', padding: 0 }}><img style={{ maxHeight: '45px' }} src={`/media/images/properties/${k}.jpg`} alt="" /></Col>
+                                <Row key={k} style={{ marginBottom: '20px', height: '40px' }} className="align-items-center">
+                                    <Col xs='3'><input style={{border: 'none', maxWidth: '100%', background: 'transparent'}} readOnly value={v.Hash} /></Col>
+                                    <Col xs='3'>{v.Address}</Col>
+                                    <Col xs='3'>{numeral(v.SellingPrice).format()}</Col>
+                                    <Col xs='3' style={{ padding: 0 }}><img style={{ maxHeight: '45px' }} src={`/media/images/properties/${k}.jpg`} alt="" /></Col>
                                 </Row>
                             )}
-                        </div>
+                        </Container>
                         {(myInfo.Properties == null || myInfo.Properties.length == 0) &&
                             <div>
                                 <strong>No properties</strong> 
