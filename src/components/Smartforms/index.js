@@ -63,7 +63,7 @@ export default class Form extends Component {
   }
   render() {
     const {props, state, toggleAccordion} = this;
-    let {src, name, onSubmit, data, onChange, readOnly = false} = props;
+    let {src, name, onSubmit, data, onChange, style = {}, readOnly = false} = props;
     const { openId } = state;
 
     if(onChange) this.handleOnChange()
@@ -81,7 +81,7 @@ export default class Form extends Component {
     if(!data) return <LoadingIndicator />;
     let accStatus = {open: false, title: null, inputs: [], count: 0};
     return (
-      <form onSubmit={(e) => {if(readOnly) return; onSubmit && onSubmit(); e.preventDefault(); return false;} }>
+      <form onSubmit={(e) => {if(readOnly) return; onSubmit && onSubmit(); e.preventDefault(); return false;} } style={style}>
         <Container fluid>
           <Row>
             {

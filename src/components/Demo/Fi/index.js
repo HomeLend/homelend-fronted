@@ -55,7 +55,7 @@ export default class Fi extends Component {
       POST(`bank/calculate`, {
         name: 'Bank test',
         swiftNumber: '12345',
-        interest: Math.floor(Math.random() * 10).toFixed(2),
+        interest: Math.floor(Math.random() * 10).toFixed(2)+1,
         requestHash: this.state.data.Hash,
         userHash: sGet('data.buyerHash'),
       },

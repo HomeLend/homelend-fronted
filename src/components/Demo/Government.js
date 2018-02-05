@@ -20,9 +20,9 @@ const execFinishContract = (mortgageId) => () => {
 
 const govFromData = {
   fields: [
-    { name: 'checkHouseOwner', type: 'checkbox', label: 'Check house owner' },
-    { name: 'checkLien', type: 'checkbox', label: 'Check lien' },
-    { name: 'checkWarningShot', type: 'checkbox', label: 'Check warning shot' },
+    { name: 'checkHouseOwner', type: 'checkbox', label: 'Approve house owner' },
+    { name: 'checkLien', type: 'checkbox', label: 'Approve no property lien' },
+    { name: 'checkWarningShot', type: 'checkbox', label: 'Approve no warning shot' },
   ]
 }
 
@@ -39,9 +39,9 @@ export default class Government extends Component {
       const postData = {
         buyerHash: userHash,
         requestHash: mortgageHash,
-        checkHouseOwner: formData.checkHouseOwner == 1,
-        checkLien: formData.checkLien == 1,
-        checkWarningShot: formData.checkWarningShot == 1
+        checkHouseOwner: formData.checkHouseOwner === 1,
+        checkLien: formData.checkLien === 1,
+        checkWarningShot: formData.checkWarningShot === 1
       };
 
       this.setState({ loading: true });
@@ -74,7 +74,7 @@ export default class Government extends Component {
         }
 
         this.setState({ loading: false });
-        if (r != null && r.length > 0) {
+        if (r !== null && r.length > 0) {
           let lastRequest = r[r.length - 1]
           this.setState({ govData: [lastRequest] });
         }
@@ -85,7 +85,11 @@ export default class Government extends Component {
     }
   }
   render() {
-    let pendingForApproval = { ...sGet('mortgage') };
+		const uiState = sGet('data.UiState');
+
+		if(uiState !== 'governmentApprovalRequired') return null;
+
+		let pendingForApproval = { ...sGet('mortgage') };
     let readyToTransferTitle = { ...sGet('mortgage') };
 
     if (this.state.loading) return <LoadingIndicator />
@@ -112,7 +116,7 @@ export default class Government extends Component {
     // );
 
     const shouldPullData = sGet('data.governmentPullData');
-    if (shouldPullData == true) {
+    if (shouldPullData === true) {
       this.pullData();
     }
 
@@ -130,10 +134,10 @@ export default class Government extends Component {
             const userHash = v.UserHash;
 
             return (
-              <div key={mortgageIndex} style={{ textAlign: 'justify', padding: '0.9em' }}>
-                <span>MortgageId: {mortgage}</span>
+              <div key={mortgageIndex} style={{ textAlign: 'justify', background: '#eee', padding: '15px' }}>
+                <span>Mortgage hash: {mortgage}</span>
                 <Form data={govFromData} name={mortgageIndex} />
-                <div key={mortgageIndex + "x"} className="btn btn-primary mt-1" style={{ width: '80%' }} onClick={this.approveCondition(mortgage, userHash, mortgageIndex)} >Send</div>
+                <div key={mortgageIndex + "x"} className="btn btn-primary mt-1" style={{ width: '100%' }} onClick={this.approveCondition(mortgage, userHash, mortgageIndex)} >Approve</div>
               </div>
             )
 

@@ -112,7 +112,7 @@ export default class Buyer extends Component {
         this.setState({ currentScreen: ''});
         addTrack({ type: "Insurance created", data: { requestHash, insuraceOfferHash } })
         acceptOffer(requestHash, insuraceOfferHash)
-        setData({ governmentPullData: true, UiState: '' });
+        setData({ governmentPullData: true, UiState: 'governmentApprovalRequired' });
         console.log("Accepted insurance offer from insurance id " + insuraceOfferHash);
       });
     }
@@ -262,9 +262,9 @@ export default class Buyer extends Component {
                     <Col style={{padding: '10px 15px', background: '#eee', fontWeight: 'bold'}}>Waiting for mortgage offers...</Col> :
                     map(mortgageOffers, (mortgageRequest, k) =>
                       <Col xs="6" key={k} className="d-flex flex-column align-items-start justify-content-start">
-                        <div style={{background: '#eee'}}>
-                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Offer hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.Hash} /></div>
-                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Property hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.PropertyHash} /></div>
+                        <div style={{background: '#eee', width: '100%'}}>
+                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Offer hash:</strong></div><input style={{border: 'none', maxWidth: '100px', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.Hash} /></div>
+                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Property hash:</strong></div><input style={{border: 'none', maxWidth: '100px', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.PropertyHash} /></div>
                           <span className="text-muted mt-2 mb-2">{moment(mortgageRequest.Timestamp).calendar()}</span>
                           {
                             map(mortgageRequest.BankOffers, (offer, kOffer) =>
@@ -283,9 +283,10 @@ export default class Buyer extends Component {
         }
         {currentScreen === "insurance" &&
           <div>
+            <div style={{fontWeight: 'bold', textAlign: 'left', margin: '10px 0'}}>Please choose an offer from an insurance company</div>
             { selectedRequest && selectedRequest.InsuranceOffers && selectedRequest.InsuranceOffers.length > 0 &&
-              <Container>
-                <Row>
+              <Container style={{background: '#eee', padding: '15px'}}>
+                <Row className="mb-2">
                   <Col xs="4"><strong>Insurance id</strong></Col>
                   <Col xs="4"><strong>Offer</strong></Col>
                   <Col xs="4"><strong>Action</strong></Col>

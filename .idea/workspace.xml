@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ae8c6532-e116-4835-a4ba-a747b5ba86d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" afterPath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" afterPath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js" afterPath="$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Fi/index.js" afterPath="$PROJECT_DIR$/src/components/Demo/Fi/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Government.js" afterPath="$PROJECT_DIR$/src/components/Demo/Government.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Insurance.js" afterPath="$PROJECT_DIR$/src/components/Demo/Insurance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Smartforms/index.js" afterPath="$PROJECT_DIR$/src/components/Smartforms/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home/index.js" afterPath="$PROJECT_DIR$/src/pages/Home/index.js" />
     </list>
     <ignored path=".idea/homelend.iml" />
@@ -35,33 +42,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/common/LoadingIndicator/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <marker date="1517817009754" expanded="true" signature="85:237" ph="&lt;div/&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="86" column="274" lean-forward="false" selection-start-line="86" selection-start-column="274" selection-end-line="86" selection-end-column="274" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/common/LoadingIndicator/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -70,8 +54,8 @@
       <file leaf-file-name="Appraiser.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Demo/Appraiser.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -79,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+            <state relative-caret-position="204">
+              <caret line="12" column="61" lean-forward="true" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -94,11 +78,21 @@
       <file leaf-file-name="Insurance.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Demo/Insurance.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="62" column="22" lean-forward="true" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+            <state relative-caret-position="354">
+              <caret line="127" column="24" lean-forward="true" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Smartforms/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="83" column="124" lean-forward="false" selection-start-line="83" selection-start-column="124" selection-end-line="83" selection-end-column="124" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,8 +140,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="271" column="89" lean-forward="true" selection-start-line="271" selection-start-column="89" selection-end-line="271" selection-end-column="89" />
+            <state relative-caret-position="135">
+              <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -158,8 +152,18 @@
       <file leaf-file-name="Government.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Demo/Government.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="132" column="69" lean-forward="false" selection-start-line="132" selection-start-column="69" selection-end-line="132" selection-end-column="69" />
+            <state relative-caret-position="-929">
+              <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MortgageSmartContract.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -187,17 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Insurance body</find>
-      <find>5</find>
-      <find>52.166</find>
-      <find>.b</find>
-      <find>.bt.</find>
-      <find>.bt</find>
-      <find>.btn.b</find>
-      <find>pullData</find>
-      <find>.btn.</find>
-      <find>P</find>
-      <find>Post a</find>
       <find>Post a n</find>
       <find>Post a new</find>
       <find>L</find>
@@ -212,11 +205,22 @@
       <find>a</find>
       <find>appraise</find>
       <find>appraiser</find>
-      <find>insuranceId</find>
       <find>abu</find>
-      <find>Insurance id</find>
       <find>b</find>
       <find>border</find>
+      <find>&gt;</find>
+      <find>g&gt;Offer hash</find>
+      <find>Property overall worth</find>
+      <find>insuranceId</find>
+      <find>Monthly insurance amount</find>
+      <find>Insurance id</find>
+      <find>80%</find>
+      <find>Seller is the rightful owner of the property</find>
+      <find>UiState</find>
+      <find>sty</find>
+      <find>mortgageIndex</find>
+      <find>proprty doesn't have any warning shot</find>
+      <find>rand</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -252,7 +256,6 @@
         <option value="$PROJECT_DIR$/src/ajax/get.js" />
         <option value="$PROJECT_DIR$/src/ajax/common.js" />
         <option value="$PROJECT_DIR$/src/ajax/post.js" />
-        <option value="$PROJECT_DIR$/src/components/Smartforms/index.js" />
         <option value="$PROJECT_DIR$/src/pages/Login/index.js" />
         <option value="$PROJECT_DIR$/src/pages/Register/index.js" />
         <option value="$PROJECT_DIR$/src/components/Smartforms/SubmitBtn.js" />
@@ -273,7 +276,6 @@
         <option value="$PROJECT_DIR$/src/actions/getProperties.js" />
         <option value="$PROJECT_DIR$/src/reducers/mortgage.js" />
         <option value="$PROJECT_DIR$/src/components/Demo/Fi.js" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js" />
         <option value="$PROJECT_DIR$/src/components/Footer/index.js" />
         <option value="$PROJECT_DIR$/src/socket/load.js" />
         <option value="$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js" />
@@ -284,13 +286,15 @@
         <option value="$PROJECT_DIR$/src/components/Demo/Seller.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/Smartforms/style.css" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Fi/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Insurance.js" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Government.js" />
-        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/pages/Home/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
+        <option value="$PROJECT_DIR$/src/components/Smartforms/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Insurance.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Government.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js" />
       </list>
     </option>
   </component>
@@ -587,7 +591,7 @@
       <workItem from="1515569839511" duration="67222000" />
       <workItem from="1516529939326" duration="797000" />
       <workItem from="1517743467309" duration="1431000" />
-      <workItem from="1517745934561" duration="20082000" />
+      <workItem from="1517745934561" duration="22756000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1513593320168</created>
@@ -918,11 +922,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517844124174</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Small responsive fix">
+      <created>1517844319631</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1517844319631</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288613000" />
+    <option name="totallyTimeSpent" value="291287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -986,7 +997,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added ajax functions, examples in the Footer component" />
     <MESSAGE value="Added an option to upload Documents using smartForms" />
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added seller, buyer progress" />
@@ -1011,7 +1021,8 @@
     <MESSAGE value="Works up to calculate rank" />
     <MESSAGE value="Design changes, in progress of adding an option to register new insurance company" />
     <MESSAGE value="Design improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Design improvements" />
+    <MESSAGE value="Small responsive fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small responsive fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1074,13 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="84" column="25" lean-forward="false" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1179,13 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1326,52 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="86" column="274" lean-forward="false" selection-start-line="86" selection-start-column="274" selection-end-line="86" selection-end-column="274" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Appraiser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Insurance.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="62" column="22" lean-forward="true" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Government.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="132" column="69" lean-forward="false" selection-start-line="132" selection-start-column="69" selection-end-line="132" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="271" column="89" lean-forward="true" selection-start-line="271" selection-start-column="89" selection-end-line="271" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1380,13 +1331,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Buyer/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="62" lean-forward="true" selection-start-line="28" selection-start-column="62" selection-end-line="28" selection-end-column="62" />
+        <state relative-caret-position="135">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Smartforms/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="83" column="124" lean-forward="false" selection-start-line="83" selection-start-column="124" selection-end-line="83" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Insurance.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="127" column="24" lean-forward="true" selection-start-line="127" selection-start-column="24" selection-end-line="127" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="61" lean-forward="true" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Appraiser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Government.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-929">
+          <caret line="57" column="57" lean-forward="true" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="74" column="17" lean-forward="true" selection-start-line="74" selection-start-column="17" selection-end-line="74" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Demo/Fi/MortgageSmartContract.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

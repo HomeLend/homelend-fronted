@@ -90,6 +90,7 @@ export default class Appraiser extends Component {
             return (
               <div key={formName + " 5"} style={{ textAlign: 'justify' }}>
                 <div>
+                  <div style={{fontWeight: 'bold', textAlign: 'left', marign: '10px 0'}}>Please estimate the property's value</div>
                   <Form data={insFromData} name={formName} />
                   {val >= parseInt(property.SellingPrice, 10) ?
                     <div onClick={this.approveCondition(buyerHash, requestHash)} className={`btn btn-primary w-100 mt-2 ${val < 100 ? 'disabled' : ''}`}>Current selling price {numeral(property['SellingPrice']).format()} amount</div> :

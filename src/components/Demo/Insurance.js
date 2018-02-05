@@ -36,6 +36,7 @@ export default class Insurance extends Component {
 
     this.state.pendingOffers = null;
     this.pullData = () => {
+      this.setState({loading: true});
       GET(`insurance/pull?licenseNumber=${insuranceLicenceNumber}`, (r, s) => {
         console.log(r, s);
         if (s !== 200) {
@@ -108,23 +109,23 @@ export default class Insurance extends Component {
     return (
       <div>
         {
-					insertNewInsurer &&
-          <div style={{position: 'absolute', top: 0, right: 0, width: '100%', height: '150px', background: 'white', marginTop: '100px'}}>
-            <Form data={newInsForm} name={'newInsuranceCompany'} />
-            <div className="d-flex flex-row justify-content-around">
-              <div className="btn btn-primary" onClick={this.createNewCompany}>Create</div>
-              <div className="btn btn-danger" onClick={() => this.setState({insertNewInsurer: false})}>Cancel</div>
-            </div>
-          </div>
+					// insertNewInsurer &&
+          // <div style={{position: 'absolute', top: 0, right: 0, width: '100%', height: '150px', background: 'white', marginTop: '100px'}}>
+          //   <Form data={newInsForm} name={'newInsuranceCompany'} />
+          //   <div className="d-flex flex-row justify-content-around">
+          //     <div className="btn btn-primary" onClick={this.createNewCompany}>Create</div>
+          //     <div className="btn btn-danger" onClick={() => this.setState({insertNewInsurer: false})}>Cancel</div>
+          //   </div>
+          // </div>
         }
-        <div id="InsuranceSwitchDropdown" style={{padding: '10px 15px', margin: '8px', position: 'absolute', top: 0, left: 0, height: "40px", display: 'flex', justifyContent: 'center', alignItems: 'center'}} onClick={this.showDropdown}>
-          Switch company
-        </div>
-        <Tooltip placement="bottom" target="InsuranceSwitchDropdown" isOpen={this.state.showDropdown} autohide={false} toggle={() => this.setState({showDropdown: false})}>
-          <div style={{padding: '10px 15px', width: '100px'}}>First</div>
-          <div style={{padding: '10px 15px', width: '100px'}}>Second</div>
-          <div style={{padding: '10px 15px', width: '100px', background: 'green'}} onClick={() => this.setState({insertNewInsurer: true})}>Add new</div>
-        </Tooltip>
+        {/*<div id="InsuranceSwitchDropdown" style={{padding: '10px 15px', margin: '8px', position: 'absolute', top: 0, left: 0, height: "40px", display: 'flex', justifyContent: 'center', alignItems: 'center'}} onClick={this.showDropdown}>*/}
+          {/*Switch company*/}
+        {/*</div>*/}
+        {/*<Tooltip placement="bottom" target="InsuranceSwitchDropdown" isOpen={this.state.showDropdown} autohide={false} toggle={() => this.setState({showDropdown: false})}>*/}
+          {/*<div style={{padding: '10px 15px', width: '100px'}}>First</div>*/}
+          {/*<div style={{padding: '10px 15px', width: '100px'}}>Second</div>*/}
+          {/*<div style={{padding: '10px 15px', width: '100px', background: 'green'}} onClick={() => this.setState({insertNewInsurer: true})}>Add new</div>*/}
+        {/*</Tooltip>*/}
         {
           map(pendingForInsurance, (v, mortgageId) => {
             const buyerHash = v.BuyerHash;
@@ -135,11 +136,14 @@ export default class Insurance extends Component {
             // if (insuranceOfferOk) return <div key={mortgageId}><strong>Request {mortgageId} is approved!</strong></div>;
             return (
               <div key={mortgage} style={{ textAlign: 'justify' }}>
-                Mortgage id {mortgage} is waiting for insurance offers:
-                <div style={{ margin: '10px' }}><strong>Address: </strong>{address}</div>
-                <div style={{ margin: '10px' }}><strong>Mortgage amount: </strong>{numeral(loanAmount).format()}</div>
-                <Form data={insFromData} name={mortgage} />
-                <div className="btn btn-primary" onClick={this.sendInsuranceOffer(buyerHash, mortgage)}>Send offer</div>
+                A new mortgage is waiting for insurance offer:
+                <div className="d-flex flex-column align-items-start justify-content-start" style={{background: '#eee', borderRadius: '3px', padding: '15px'}}>
+                  <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Address: </strong>{address}</span></div>
+                  <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Mortgage amount: </strong>{numeral(loanAmount).format()}</span></div>
+                  <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Mortgage hash: </strong><input style={{border: 'none', maxWidth: '300px', background: 'transparent', padding: 0}} readOnly value={mortgage} /></span></div>
+                  <Form data={insFromData} name={mortgage} style={{width: '100%'}}/>
+                  <div className="btn btn-primary w-100" onClick={this.sendInsuranceOffer(buyerHash, mortgage)}>Serve offer</div>
+                </div>
               </div>
             )
           })

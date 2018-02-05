@@ -91,12 +91,15 @@ export default class MortgageSmartContract extends Component {
             </div>
           }
 
-          {data.Status == 'REQUEST_GOVERNMENT_PROVIDED' && <div>
-            <h5>The mortgage request is pending for approval</h5>
-            <div className="btn btn-primary" onClick={this.approveLoan(data.BuyerHash, data.Hash, data)}>Approve Loan</div>
-          </div>}
+          {data.Status === 'REQUEST_GOVERNMENT_PROVIDED' &&
+            <div style={{background: '#eee', margin: '10px 0', padding: '15px'}}>
+              <h5>The mortgage request is pending for approval</h5>
+              <div className="btn btn-primary w-100" onClick={this.approveLoan(data.BuyerHash, data.Hash, data)}>Approve Loan</div>
+            </div>
+          }
 
-          {(data.Status == 'REQUEST_APPROVED_BY_BANK') && <div>
+          {(data.Status === 'REQUEST_APPROVED_BY_BANK') &&
+          <div style={{background: '#eee', margin: '10px 0', padding: '15px'}}>
             <div className="btn btn-primary" onClick={this.createNewContract(data.BuyerHash, data.Hash)}>Create contract between seller - buyer - financial institution</div>
           </div>}
         </div>
