@@ -18,7 +18,7 @@ const Card = ({title, style, component}) => (
 export default class Home extends Component {
   render() {
     return(
-      <div style={{height: '100vh', minHeight: '1000px', display: 'grid', gridTemplateColumns: 'auto auto auto', gridTemplateRows: 'auto auto auto', gridGap: '15px', padding: '10px'}}>
+      <div style={{height: '100vh', minHeight: '1000px', display: 'grid', gridTemplateColumns: 'calc(33.33% - 10px) calc(33.33% - 10px) calc(33.33% - 10px)', gridTemplateRows: 'calc(33.33% - 10px) calc(33.33% - 10px) calc(33.33% - 10px)', gridGap: '15px', padding: '10px'}}>
         <Card title={"Seller"} component={<Seller />}/>
         <Card title={"Buyer"} component={<Buyer />} />
         <Card title={"Financial Institution"} component={<Fi />} />
