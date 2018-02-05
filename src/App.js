@@ -20,7 +20,7 @@ class App extends Component {
     return (
       <div className={`d-flex align-items-center flex-column ${routerPath}`}>
         <div className="site-content w-100">
-          <div style={{minHeight: 'calc(100vh)'}}>
+          <div style={{minHeight: '100vh'}}>
             <Route exact path="/" component={Home}/>
           </div>
           <Footer />

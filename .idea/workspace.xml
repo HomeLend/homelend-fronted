@@ -4,10 +4,7 @@
     <list default="true" id="ae8c6532-e116-4835-a4ba-a747b5ba86d6" name="Default" comment="Design improvements">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" afterPath="$PROJECT_DIR$/src/components/Demo/Appraiser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" afterPath="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Government.js" afterPath="$PROJECT_DIR$/src/components/Demo/Government.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Demo/Insurance.js" afterPath="$PROJECT_DIR$/src/components/Demo/Insurance.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home/index.js" afterPath="$PROJECT_DIR$/src/pages/Home/index.js" />
     </list>
     <ignored path=".idea/homelend.iml" />
     <ignored path=".idea/misc.xml" />
@@ -38,16 +35,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CreditRatingAgency.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Demo/CreditRatingAgency.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/common/LoadingIndicator/index.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,6 +73,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="299">
               <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -167,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+            <state relative-caret-position="323">
+              <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -283,7 +282,6 @@
         <option value="$PROJECT_DIR$/src/components/Demo/Buyer/AppraiserStep.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/pages/Home/index.js" />
         <option value="$PROJECT_DIR$/src/components/Demo/Seller.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/Smartforms/style.css" />
@@ -293,6 +291,7 @@
         <option value="$PROJECT_DIR$/src/components/Demo/Government.js" />
         <option value="$PROJECT_DIR$/src/components/Demo/Buyer/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/pages/Home/index.js" />
       </list>
     </option>
   </component>
@@ -589,7 +588,7 @@
       <workItem from="1515569839511" duration="67222000" />
       <workItem from="1516529939326" duration="797000" />
       <workItem from="1517743467309" duration="1431000" />
-      <workItem from="1517745934561" duration="16403000" />
+      <workItem from="1517745934561" duration="19609000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1513593320168</created>
@@ -906,11 +905,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517821805683</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Design improvements">
+      <created>1517833866398</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1517833866398</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284934000" />
+    <option name="totallyTimeSpent" value="288140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1216,17 +1222,7 @@
         <state relative-caret-position="374">
           <caret line="28" column="42" lean-forward="false" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
           <folding>
-            <element signature="e#95#150#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="205" lean-forward="false" selection-start-line="13" selection-start-column="205" selection-end-line="13" selection-end-column="205" />
-          <folding>
-            <element signature="e#79#129#0" expanded="true" />
+            <element signature="e#95#150#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1372,9 +1368,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+        <state relative-caret-position="323">
+          <caret line="27" column="12" lean-forward="true" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Home/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
