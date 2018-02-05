@@ -84,9 +84,9 @@ export default class Fi extends Component {
             <div>
               <strong style={{margin: '10px 0'}}>A new mortgage request is waiting for an offer</strong>
               <div className="d-flex flex-column align-items-start justify-content-start" style={{background: '#eee', borderRadius: '3px', padding: '15px'}}>
-                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Buyer: </span><input style={{border: 'none', maxWidth: '300px', background: 'transparent'}} readOnly value={this.state.data.BuyerHash} /></div>
-                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Credit score: </span><span>{this.state.data.CreditScore}</span></div>
-                <div className="d-flex flex-row align-items-center" style={{height: '40px'}}><span style={{padding: '0 15px'}}>Loan amount: </span><span>{numeral(this.state.data.LoanAmount).format()}</span></div>
+                <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Buyer: </strong></span><input style={{border: 'none', maxWidth: '300px', background: 'transparent', padding: 0}} readOnly value={this.state.data.BuyerHash} /></div>
+                <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Credit score: </strong></span><span>{this.state.data.CreditScore}</span></div>
+                <div className="d-flex flex-row align-items-center text-left" style={{height: '40px'}}><span style={{padding: '0 15px', minWidth: '150px'}}><strong>Loan amount: </strong></span><span>{numeral(this.state.data.LoanAmount).format()}</span></div>
                 <div className="w-100 d-flex flex-row justify-content-center">
                   <div className="btn btn-primary" style={{maxWidth: '350px'}} onClick={this.sendMortgageProposal}>Serve offer</div>
                 </div>                  

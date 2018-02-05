@@ -14,6 +14,7 @@ import { faCircle } from '@fortawesome/fontawesome-free-solid'
 import numeral from 'numeral'
 import LoadingIndicator from '../../common/LoadingIndicator'
 import ViewMyInfo from '../ViewMyInfo'
+import moment from 'moment'
 import { setData } from '../../../reducers/generalData'
 
 const register = {
@@ -254,26 +255,29 @@ export default class Buyer extends Component {
         {
           // Stopped at - no mortgage offers in the returned object
           currentScreen === "waiting4Offers" &&
-          <div>
-            {
-              !mortgageOffers ?
-                "Waiting for mortgage offers..." :
-                map(mortgageOffers, (mortgageRequest, k) =>
-                  <div key={k} className="d-flex flex-column align-items-start justify-content-start">
-                    <div><span>Offer hash:</span><span>{mortgageRequest.Hash}</span></div>
-                    <div><span>Property hash:</span><span>{mortgageRequest.PropertyHash}</span></div>
-                    <div><span>Timestamp:</span><span>{mortgageRequest.Timestamp}</span></div>
-                    <div><span>Offers:</span><span>{
-                      map(mortgageRequest.BankOffers, (offer, kOffer) =>
-                        <div key={kOffer}>
-                          Monthly payment: {numeral(offer.MonthlyPayment).format()}
-                          <div onClick={() => this.acceptOffer(mortgageRequest.Hash, offer.Hash)} className="btn btn-primary">Select</div>
-                        </div>
-                      )}</span></div>
-                  </div>
-                )
-            }
-          </div>
+            <Container>
+              <Row className="align-items-center flex-row">
+                {
+                  !mortgageOffers ?
+                    <Col style={{padding: '10px 15px', background: '#eee', fontWeight: 'bold'}}>Waiting for mortgage offers...</Col> :
+                    map(mortgageOffers, (mortgageRequest, k) =>
+                      <Col xs="6" key={k} className="d-flex flex-column align-items-start justify-content-start" style={{background: '#eee'}}>
+                        <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Offer hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.Hash} /></div>
+                        <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Property hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.PropertyHash} /></div>
+                        <span className="text-muted mt-2 mb-2">{moment(mortgageRequest.Timestamp).calendar()}</span>
+                        {
+                          map(mortgageRequest.BankOffers, (offer, kOffer) =>
+                            <div key={kOffer} className="w-100">
+                              Monthly payment: {numeral(offer.MonthlyPayment).format()}
+                              <div onClick={() => this.acceptOffer(mortgageRequest.Hash, offer.Hash)} className="btn btn-primary w-100">Accept offer</div>
+                            </div>
+                          )
+                        }
+                      </Col>
+                    )
+                }
+              </Row>
+            </Container>
         }
         {currentScreen === "insurance" &&
           <div>
