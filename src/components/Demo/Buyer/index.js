@@ -256,23 +256,25 @@ export default class Buyer extends Component {
           // Stopped at - no mortgage offers in the returned object
           currentScreen === "waiting4Offers" &&
             <Container>
-              <Row className="align-items-center flex-row">
+              <Row>
                 {
                   !mortgageOffers ?
                     <Col style={{padding: '10px 15px', background: '#eee', fontWeight: 'bold'}}>Waiting for mortgage offers...</Col> :
                     map(mortgageOffers, (mortgageRequest, k) =>
-                      <Col xs="6" key={k} className="d-flex flex-column align-items-start justify-content-start" style={{background: '#eee'}}>
-                        <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Offer hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.Hash} /></div>
-                        <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Property hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.PropertyHash} /></div>
-                        <span className="text-muted mt-2 mb-2">{moment(mortgageRequest.Timestamp).calendar()}</span>
-                        {
-                          map(mortgageRequest.BankOffers, (offer, kOffer) =>
-                            <div key={kOffer} className="w-100">
-                              Monthly payment: {numeral(offer.MonthlyPayment).format()}
-                              <div onClick={() => this.acceptOffer(mortgageRequest.Hash, offer.Hash)} className="btn btn-primary w-100">Accept offer</div>
-                            </div>
-                          )
-                        }
+                      <Col xs="6" key={k} className="d-flex flex-column align-items-start justify-content-start">
+                        <div style={{background: '#eee'}}>
+                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Offer hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.Hash} /></div>
+                          <div style={{height: '40px'}} className="d-flex flex-row align-items-center text-left"><div style={{minWidth: '150px'}}><strong>Property hash:</strong></div><input style={{border: 'none', maxWidth: '100%', background: 'transparent', padding: 0}} readOnly value={mortgageRequest.PropertyHash} /></div>
+                          <span className="text-muted mt-2 mb-2">{moment(mortgageRequest.Timestamp).calendar()}</span>
+                          {
+                            map(mortgageRequest.BankOffers, (offer, kOffer) =>
+                              <div key={kOffer} className="w-100">
+                                Monthly payment: {numeral(offer.MonthlyPayment).format()}
+                                <div onClick={() => this.acceptOffer(mortgageRequest.Hash, offer.Hash)} className="btn btn-primary w-100">Accept offer</div>
+                              </div>
+                            )
+                          }
+                        </div>
                       </Col>
                     )
                 }
@@ -284,9 +286,9 @@ export default class Buyer extends Component {
             { selectedRequest && selectedRequest.InsuranceOffers && selectedRequest.InsuranceOffers.length > 0 &&
               <Container>
                 <Row>
-                  <Col xs="4">Insurance id</Col>
-                  <Col xs="4">Offer</Col>
-                  <Col xs="4">Action</Col>
+                  <Col xs="4"><strong>Insurance id</strong></Col>
+                  <Col xs="4"><strong>Offer</strong></Col>
+                  <Col xs="4"><strong>Action</strong></Col>
                 </Row>
 
                 {map(selectedRequest.InsuranceOffers, (v, insuranceId) =>

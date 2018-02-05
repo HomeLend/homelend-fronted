@@ -130,7 +130,7 @@ export default class Government extends Component {
             const userHash = v.UserHash;
 
             return (
-              <div key={mortgageIndex} style={{ textAlign: 'justify', border: '1px solid black', padding: '0.9em' }}>
+              <div key={mortgageIndex} style={{ textAlign: 'justify', padding: '0.9em' }}>
                 <span>MortgageId: {mortgage}</span>
                 <Form data={govFromData} name={mortgageIndex} />
                 <div key={mortgageIndex + "x"} className="btn btn-primary mt-1" style={{ width: '80%' }} onClick={this.approveCondition(mortgage, userHash, mortgageIndex)} >Send</div>

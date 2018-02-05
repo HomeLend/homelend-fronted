@@ -29,7 +29,7 @@ export default class Insurance extends Component {
   constructor(props) {
     super(props);
     const insuranceId = 1234;
-    const insuranceLicenceNumber = 1234;
+    const insuranceLicenceNumber = 123456;
 
     this.state = {};
     this.state.loading = false;

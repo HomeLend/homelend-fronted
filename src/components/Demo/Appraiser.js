@@ -21,7 +21,7 @@ export default class Appraiser extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.email = "abu@afash.dala";
+    this.email = "luk@luk.com";
 
     this.state.loading = false;
     this.fetchData = () => {
